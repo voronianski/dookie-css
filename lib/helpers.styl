@@ -1,0 +1,204 @@
+/**
+ * ^HELPERS
+ */
+
+block()
+	display: block
+
+inline-block()
+	display: inline-block
+
+hide()
+	display: none
+
+/*
+ * Text decoration mixins
+ */
+upcase()
+	text-transform: uppercase
+
+lowcase()
+	text-transform: lowercase
+
+nodecorate()
+	text-decoration: none
+
+/*
+ * Font style mixins and simplifiers
+ * e.g. fw: 800
+ * e.g. fs: 2em
+ */
+fw(value)
+	font-weight: value
+
+fs(value)
+	font-size: value
+
+bold()
+	font-weight: bold
+
+italic()
+	font-style: italic
+
+normal()
+	font-weight: normal
+	font-style: normal
+
+/*
+ * Size mixin
+ * e.g size: 20px 10px => width: 20px; height: 10px
+ */
+size(numbers...)
+	if length(numbers) > 1
+		width: unit(numbers[0], px)
+		height: unit(numbers[1], px)
+	else
+		width: unit(numbers, px)
+		height: unit(numbers, px)
+
+/*
+ * Prefix helper
+ * e.g. -prefix(border-radius, 3px) => all vendor list (check 'settings') based properties
+ */
+-prefix(prop, val)
+	for prefix in vendors
+		if prefix == official
+			{prop}: val
+		else
+			-{prefix}-{prop}: val
+
+/*
+ * Joins a few literals together into one string
+ */
+literal-join(string, literals)
+	result = unquote('')
+	first = true
+	for args in literals
+		subresult = unquote('')
+	for arg in args
+		subresult = subresult arg
+	if first
+		result = subresult
+		first = false
+	else
+		result = s('%s%s%s', result, unquote(string), subresult)
+	return result
+
+/*
+ * Background mixin (with retina too)
+ * e.g. bg: 'logo.png' (with specified img-path in 'settings')
+ * e.g. bg: '../img/logo.png' 100px 50px
+ */
+bg(path, args...)
+	args = unquote('no-repeat') unless args
+	background: url(img-path path) args
+
+retina(path, width, height, args...)
+	args = unquote('no-repeat') unless args
+	background: url(img-path path) args
+	size: width height
+	background-size: literal-join('', width height)
+
+/*
+ * Image replacing mixin
+ */
+image-block(path)
+	bg: path
+	size: image-size(path)[0] image-size(path)[1]
+	font: 0/0
+	text-shadow: none
+	color: transparent
+
+/*
+ * Sprite mixins
+ * @param 'path' - sprite image path
+ * @param 'grid' - your sprite grid step (can be with gridX & gridY)
+ * @param, 'x', 'y' -  square counts starting from 0
+ * e.g. sprite-grid: 1, 5, 32px
+ */
+sprite(x = 0, y = 0, grid...)
+	if length(grid) > 1
+		background-position: unit(x*grid[0]*-1, px) unit(y*grid[1]*-1, px)
+	else
+		background-position: unit(x*grid*-1, px) unit(y*grid*-1, px)
+
+// mixin that replaces text with an icon
+// e.g. sprite-replace: 'test.png' 1 5 16px 24px
+sprite-replace(path, x = 0, y = 0, grid...)
+	bg: path
+	sprite: x y grid
+	text-indent: -999em
+	letter-spacing: -999em
+	overflow: hidden
+
+// mixin for inline icons
+// e.g. sprite-inline: 'test.png' 1 5 18px 18px 16px 24px
+sprite-inline(path, x = 0, y = 0, width, height, grid...)
+	&:before
+		inline-block()
+		bg: path
+		sprite: x y grid
+		content: ''
+		width: width
+		height: height
+
+// mixin for padded icons
+// e.g. sprite-padded: 'test.png' 1 5 18px 18px 10px 5px 32px
+sprite-padded(path, x = 0, y = 0, width, height, top, left, grid...)
+	&:before
+		absolute: top left
+		bg: path
+		sprite: x y grid
+		content: ''
+		width: width
+		height: height
+
+/*
+ * Basic clearfix mixin
+ * e.g. clearfix()
+ */
+clearfix()
+	block()
+
+	&:after
+		content: "."
+		block()
+		height: 0
+		clear: both
+		visibility: hidden
+
+/*
+ * Make single text line overflow
+ * e.g. text-overflow: 200 ellipsis
+ */
+text-overflow(width, type)
+	text-overflow: type
+	white-space: nowrap
+	overflow: hidden
+	width: unit(width, px)
+
+/*
+ * Creates triangle
+ * possible directions 'up', 'down', 'left', 'right'
+ * e.g. triangle: down 15px #F80
+ */
+triangle(direction = up, size = 10px, color = #000)
+	width: 0
+	height: 0
+
+	if direction == up
+		border-left: size solid transparent
+		border-right: size solid transparent
+		border-bottom: size solid color
+	else if direction == down
+		border-left: size solid transparent
+		border-right: size solid transparent
+		border-top: size solid color
+	else if direction == left
+		border-top: size solid transparent
+		border-bottom: size solid transparent
+		border-right: size solid color
+	else if direction == right
+		border-top: size solid transparent
+		border-bottom: size solid transparent
+		border-left: size solid color
