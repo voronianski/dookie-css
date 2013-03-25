@@ -1,5 +1,5 @@
 /**
- * ^HELPERS
+ * COMMON HELPERS
  */
 
 block()
@@ -45,6 +45,20 @@ normal()
 	font-style: normal
 
 /*
+ * Basic clearfix mixin
+ * e.g. clearfix()
+ */
+clearfix()
+	block()
+
+	&:after
+		content: "."
+		block()
+		height: 0
+		clear: both
+		visibility: hidden
+
+/*
  * Size mixin
  * e.g size: 20px 10px => width: 20px; height: 10px
  */
@@ -55,6 +69,31 @@ size(numbers...)
 	else
 		width: unit(numbers, px)
 		height: unit(numbers, px)
+
+/*
+ * Position helper
+ */
+-pos(type, args)
+	i = 0
+	position: unquote(type)
+	{args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+	{args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+
+/*
+ * Position mixins
+ * e.g. absolute: top 5px left 40px
+ */
+absolute()
+	-pos('absolute', arguments)
+
+relative()
+	-pos('relative', arguments)
+
+fixed()
+	-pos('fixed', arguments)
+
+static()
+	-pos('static', arguments)
 
 /*
  * Prefix helper
@@ -101,13 +140,22 @@ retina(path, width, height, args...)
 
 /*
  * Image replacing mixin
+ * uses stylus' built-in image-size() does not support JPEG yet
+ * set 'complete' mode to use all formats and not depend on original but you'll need to specify dimensions by hand
+ * e.g. image-block: 'test.png'
+ * e.g. image-block: 'test.jpg' complete 300 200
  */
-image-block(path)
-	bg: path
-	size: image-size(path)[0] image-size(path)[1]
-	font: 0/0
+image-block(path, mode = null, dimensions...)
+	url = img-path + path
+
+	bg(path) if path
+	font: 0/0 a
 	text-shadow: none
 	color: transparent
+	if mode == complete
+		size: unit(dimensions[0], px) unit(dimensions[1], px)
+	else
+		size: image-size(url)[0] image-size(url)[1]
 
 /*
  * Sprite mixins
@@ -154,18 +202,16 @@ sprite-padded(path, x = 0, y = 0, width, height, top, left, grid...)
 		height: height
 
 /*
- * Basic clearfix mixin
- * e.g. clearfix()
+ * Global font-face mixin
+ * Make sure that the font name matches the name of the font files
+ * e.g. font-face(DIN, '/fonts')
  */
-clearfix()
-	block()
-
-	&:after
-		content: "."
-		block()
-		height: 0
-		clear: both
-		visibility: hidden
+font-face(name, folder, weight = normal, style = normal)
+	@font-face
+		font-family: name
+		src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') '#svgFontName') format('svg');
+		font-weight: weight
+		font-style: style
 
 /*
  * Make single text line overflow
@@ -176,6 +222,14 @@ text-overflow(width, type)
 	white-space: nowrap
 	overflow: hidden
 	width: unit(width, px)
+
+/*
+ * Disallow user to select element
+ * e.g. no-select()
+ */
+no-select()
+	-webkit-touch-callout: none
+	-prefix(user-select, none)
 
 /*
  * Creates triangle
@@ -202,3 +256,45 @@ triangle(direction = up, size = 10px, color = #000)
 		border-top: size solid transparent
 		border-bottom: size solid transparent
 		border-left: size solid color
+
+/*
+ * Opacity mixin
+ * e.g. opacity: .5
+ */
+opacity(opacity)
+	filter: s("alpha(opacity = %s)", opacity * 100) if ie-support
+	opacity: opacity
+
+/*
+ * Custom animation timing functions
+ * http://www.ui-transitions.com/
+ */
+// ease-in
+ease-in-quad = cubic-bezier(0.550,  0.085, 0.680, 0.530)
+ease-in-cubic = cubic-bezier(0.550,  0.055, 0.675, 0.190)
+ease-in-quart = cubic-bezier(0.895,  0.030, 0.685, 0.220)
+ease-in-quint = cubic-bezier(0.755,  0.050, 0.855, 0.060)
+ease-in-sine = cubic-bezier(0.470,  0.000, 0.745, 0.715)
+ease-in-expo = cubic-bezier(0.950,  0.050, 0.795, 0.035)
+ease-in-circ = cubic-bezier(0.600,  0.040, 0.980, 0.335)
+ease-in-back = cubic-bezier(0.600, -0.280, 0.735, 0.045)
+
+// ease-out
+ease-out-quad = cubic-bezier(0.250,  0.460, 0.450, 0.940)
+ease-out-cubic = cubic-bezier(0.215,  0.610, 0.355, 1.000)
+ease-out-quart = cubic-bezier(0.165,  0.840, 0.440, 1.000)
+ease-out-quint = cubic-bezier(0.230,  1.000, 0.320, 1.000)
+ease-out-sine = cubic-bezier(0.390,  0.575, 0.565, 1.000)
+ease-out-expo = cubic-bezier(0.190,  1.000, 0.220, 1.000)
+ease-out-circ = cubic-bezier(0.075,  0.820, 0.165, 1.000)
+ease-out-back = cubic-bezier(0.175,  0.885, 0.320, 1.275)
+
+// ease-in-out
+ease-in-out-quad = cubic-bezier(0.455,  0.030, 0.515, 0.955)
+ease-in-out-cubic = cubic-bezier(0.645,  0.045, 0.355, 1.000)
+ease-in-out-quart = cubic-bezier(0.770,  0.000, 0.175, 1.000)
+ease-in-out-quint = cubic-bezier(0.860,  0.000, 0.070, 1.000)
+ease-in-out-sine = cubic-bezier(0.445,  0.050, 0.550, 0.950)
+ease-in-out-expo = cubic-bezier(1.000,  0.000, 0.000, 1.000)
+ease-in-out-circ = cubic-bezier(0.785,  0.135, 0.150, 0.860)
+ease-in-out-back = cubic-bezier(0.680, -0.550, 0.265, 1.550)
