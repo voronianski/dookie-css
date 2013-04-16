@@ -1,7 +1,25 @@
-/*
- * ^CLASSES MIXINS
+/**
+ * GLOBAL MIXINS
  */
 
+/*
+ * Text selection mixin
+ * e.g. text-selection(#F80, #EEE)
+ */
+text-selection(highlight, textColor = null)
+	textColor = 'white' unless textColor
+
+	::-moz-selection
+		background: highlight
+		color: textColor
+	::selection
+		background: highlight
+		color: textColor
+
+/*
+ * Base classes
+ * e.g. base-classes()
+ */
 base-classes()
 	.clear
 		clear: both
