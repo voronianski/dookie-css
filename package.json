@@ -1,7 +1,13 @@
 {
   "name": "dookie-css",
   "description": "stylus driven css library",
-  "version": "0.0.1",
+  "keywords": [
+    "css",
+    "stylus",
+    "mixins",
+    "utilities"
+  ],
+  "version": "0.0.2",
   "author": {
     "name": "Dmitri Voronianski"
   },
@@ -11,5 +17,13 @@
   },
   "dependencies": {
     "stylus": "~0.32.1"
-  }
+  },
+  "homepage": "https://github.com/voronianski/dookie-css",
+  "bugs": "https://github.com/voronianski/dookie-css/issues",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voronianski/dookie-css.git"
+  },
 }
