@@ -1,12 +1,17 @@
 # doookie-css
 
-[dookie](http://www.goodrock.com/images/Product/medium/b2402.jpg "Green Day's Dookie button")
+![Green Day's Dookie button](http://www.goodrock.com/images/Product/medium/b2402.jpg)
 
-This is [Stylus](https://github.com/learnboost/stylus "Stylus") driven CSS framework.
+Dookie is a CSS library built on top of the [Stylus](https://github.com/learnboost/stylus "Stylus") preprocessor.
+It provides a couple of useful stylus mixins, utilities and components
 
 ## How to use
 
+To do..
 
+## Documentation
+
+To do..
 
 ---
 
