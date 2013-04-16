@@ -8,7 +8,7 @@ function css () {
 	return function (style) {
 		style.include(__dirname);
 		style.import('lib');
-	}
+	};
 }
 
 exports.middleware = middleware;

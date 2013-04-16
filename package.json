@@ -1,12 +1,15 @@
 {
-	"name": "dookie-css",
-	"description": "stylus driven css library",
-	"version": "0.0.1",
-	"author": {
-		"name": "Dmitri Voronianski"
-	},
-	"main": "index.js",
-	"engines": {
-		"node": ">=0.8.22"
-	}
+  "name": "dookie-css",
+  "description": "stylus driven css library",
+  "version": "0.0.1",
+  "author": {
+    "name": "Dmitri Voronianski"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.8.22"
+  },
+  "dependencies": {
+    "stylus": "~0.32.1"
+  }
 }
