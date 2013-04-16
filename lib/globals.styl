@@ -1,0 +1,58 @@
+/**
+ * GLOBAL MIXINS
+ */
+
+/*
+ * Global font-face mixin
+ * Make sure that the font name matches the name of the font files
+ * e.g. font-face(DIN, '/fonts')
+ */
+font-face(name, folder, weight = normal, style = normal)
+	@font-face
+		font-family: name
+		src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') '#svgFontName') format('svg');
+		font-weight: weight
+		font-style: style
+
+/*
+ * Text selection mixin
+ * e.g. text-selection(#F80, #EEE)
+ */
+text-selection(highlight, textColor = null)
+	textColor = 'white' unless textColor
+
+	::-moz-selection
+		background: highlight
+		color: textColor
+	::selection
+		background: highlight
+		color: textColor
+
+/*
+ * Base classes
+ * e.g. base-classes()
+ */
+base-classes()
+	.clear
+		clear: both
+
+	.left
+		float: left
+
+	.right
+		float: right
+
+	.bold
+		bold()
+
+	.italic
+		italic()
+
+	.bullet
+		list-style: circle
+
+	.hide
+		hide()
+
+	.clearfix
+		clearfix()

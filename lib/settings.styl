@@ -4,6 +4,7 @@
  */
 sans-serif = unquote('Arial, Helvetica, sans-serif')
 serif = unquote('Georgia, "Times New Roman", serif')
+monospace = unquote('Consolas, Inconsolata, "Courier", "Courier New", monospace')
 
 font-face = sans-serif
 font-size = 12px
@@ -12,14 +13,12 @@ font-color = #333
 // 'default' will specify browser based ui
 ui-theme = 'default'
 
-default-color = ''
-
-highlight-color = ''
+default-color = #333
 
 // e.g. '../images/'
 img-path = ''
 
 vendors ?= moz webkit ms o official
 
-// disable ie support by default
+// ie support is disabled by default
 ie-support ?= false
