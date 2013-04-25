@@ -73,11 +73,11 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ##### Reset global mixins
 
-``reset()`` - simple reset
+``reset()`` - simple base and recommended reset
 
 ``normalize()`` - popular [normalize.css](https://github.com/necolas/normalize.css/) reset
 
-``fields-reset()`` - reset fields from sometimes annoying browser based styles on *:required*, *:valid* etc. pseudo classes
+``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes)
 
 
 More to do..
