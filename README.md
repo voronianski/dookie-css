@@ -82,6 +82,9 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 More to do..
 
+## Why dookie?!
+
+Because it's awesome [Green Day's](http://en.wikipedia.org/wiki/Green_Day-_Dookie "Dookie album wiki") album from childhood :)
 ---
 
 **MIT Licensed**
