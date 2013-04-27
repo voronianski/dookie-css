@@ -232,6 +232,32 @@ cool pure css triangle mixin, example:
 }
 ```
 
+###Positioning
+
+Dookie allows you to shorten css element positioning while using simply one line property.
+
+#####absolute: [name value], ...
+
+#####relative: [name value], ...
+
+#####fixed: [name value], ...
+
+#####static: [name value], ...
+
+######Examples:
+
+```css
+.box
+	absolute: top 10px, left 15px
+
+/* yields => */
+.box {
+	position: absolute;
+	top: 0px;
+	right: 5px;
+}
+```
+
 ###Global mixins
 
 As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
