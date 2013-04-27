@@ -81,11 +81,48 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ##### Common useful helpers
 
-``block()``, ``inline-block()``, ``hide()`` - shorter replacements for ``display: block | inline-block | none`` respectively;
+Shorter replacements for ``display: block | inline-block | none`` respectively:
 
-``upcase()``, ``lowcase()``, ``nodecorate()`` - frequently used text transformation and decoration properties shorthands;
+``block()``
 
+``inline-block()``
 
+``hide()``
+
+Frequently used text transformation and decoration properties shorthands:
+
+``reset-case()``
+
+``upcase()``
+
+``lowcase()``
+
+``nodecorate()``
+
+Font styles:
+
+``bold()``
+
+``italic()``
+
+``normal()``
+
+``fs: [your font-size]`` - font-size shortener
+
+``fw: [your font-weight]`` - same for font weight
+
+######Example:
+
+```css
+h2
+	fs: 2em
+	fw: 500
+	italic()
+
+.link
+	block()
+	nodecorate()
+```
 
 More to do..
 
