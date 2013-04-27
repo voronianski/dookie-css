@@ -71,7 +71,7 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ## API Documentation
 
-##### Reset global mixins
+#### Reset global mixins
 
 ``reset()`` - simple base and recommended reset;
 
@@ -79,7 +79,7 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes);
 
-##### Common useful helpers
+#### Common useful helpers
 
 Shorter replacements for ``display: block | inline-block | none`` respectively:
 
@@ -112,7 +112,7 @@ h2
 
 ``clearfix()`` - basic clearfix, simply add it to your class name or call [global mixin](https://github.com/voronianski/dookie-css#global-mixins "Global mixins") ``base-classes()`` within your project to have it in ``.clearfix`` class;
 
-#####Global mixins
+####Global mixins
 
 As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
 
@@ -124,7 +124,7 @@ As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins
 
 ``text-selection: [highlight color], [text color is 'white' unless specified]`` - selection background and text color;
 
-``font-face: [name], [folder], [weight optional], [style optional]`` - [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
+#####font-face: [name], [folder], [weight optional], [style optional] - [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
 ######Example:
 
@@ -143,7 +143,26 @@ font-face: DIN, '/fonts'
 	font-style: normal;
 ```
 
+#####size: [width, height] - cool dimensions shortener:
 
+```css
+.box
+	size: 30px
+
+.longbox
+	size: 100px 20px
+
+/* in css this becomes => */
+.box {
+	width: 30px;
+	height: 30px;
+}
+
+.longbox {
+	width: 100px;
+	height: 20px;
+}
+```
 
 
 
