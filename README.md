@@ -93,11 +93,15 @@ Font styles:
 
 ``bold()``, ``italic()``, ``normal()``
 
-``fs: [your font-size]`` - font-size shortener;
+#####fs: [your font-size] -
 
-``fw: [your font-weight]`` - font-weight shortener;
+font-size shortener;
 
-######Example:
+#####fw: [your font-weight] -
+
+font-weight shortener;
+
+######Examples:
 
 ```css
 h2
@@ -110,21 +114,28 @@ h2
 	nodecorate()
 ```
 
-``clearfix()`` - basic clearfix, simply add it to your class name or call [global mixin](https://github.com/voronianski/dookie-css#global-mixins "Global mixins") ``base-classes()`` within your project to have it in ``.clearfix`` class;
+#####clearfix() -
+
+basic clearfix, simply add it to your class name or call [global mixin](https://github.com/voronianski/dookie-css#global-mixins "Global mixins") ``base-classes()`` within your project to have it in ``.clearfix`` class;
 
 ####Global mixins
 
 As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
 
-``base-classes()`` - adds couple of useful classes that you might add anyways, full list of them:
+#####base-classes() -
+
+adds couple of useful classes that you might add anyways, full list of them:
 
 ```css
 .left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
 ```
 
-``text-selection: [highlight color], [text color is 'white' unless specified]`` - selection background and text color;
+#####text-selection: [highlight color], [text color is 'white' unless specified] -
+
+selection background and text color;
 
 #####font-face: [name], [folder], [weight optional], [style optional] -
+
 [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
 ######Example:
