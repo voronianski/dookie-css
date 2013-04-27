@@ -166,7 +166,9 @@ background mixin shortener, example:
 
 #####image-block: [path], [dimensions optional] -
 
-mixin that replaces block with image specified in it, *note:* ``.png`` images could skip dimensions, because of Stylus native ``image-size()`` built-in function, example:
+mixin that replaces block with image specified in it.
+
+*Note:* ``.png`` images could skip dimensions, because of Stylus native ``image-size()`` built-in function, example:
 
 ```css
 .replacer
@@ -180,6 +182,53 @@ mixin that replaces block with image specified in it, *note:* ``.png`` images co
 	color: transparent;
 	width: 300px;
 	height: 200px;
+}
+```
+
+#####text-overflow: [width], [type optional] -
+
+useful when long text line need to be overflowed, default type is *ellipsis*, example:
+
+```css
+.description
+	text-overflow: 300px
+
+/* yields => */
+.description {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 300px;
+}
+```
+
+#####text-hide() -
+
+hiding text mixin;
+
+#####no-select() -
+
+disallow user to select element;
+
+#####opacity: [opacity] -
+
+same as native css property but if your settings set ``ie-support`` to ``true`` mixin adds old-school IE ``filter`` property by itself;
+
+#####triangle: [up|down|left|right], [size|default: 10px], [color|default: #000] -
+
+cool pure css triangle mixin, example:
+
+```css
+.triangle
+	down 15px #F80
+
+/* yields => */
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid #F80;
 }
 ```
 
