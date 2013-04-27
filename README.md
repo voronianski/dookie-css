@@ -56,7 +56,7 @@ function handler(request, response) {
 
 // use stylus for styling
 stylus(str)
-	.use(dookie.css()) // call dookie
+	.use(dookie.css()) // call dookie.css() function
 	.render(function (err, css) {
 		if (err) {
 			throw err;
@@ -124,7 +124,8 @@ As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins
 
 ``text-selection: [highlight color], [text color is 'white' unless specified]`` - selection background and text color;
 
-#####font-face: [name], [folder], [weight optional], [style optional] - [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
+#####font-face: [name], [folder], [weight optional], [style optional] -
+[bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
 ######Example:
 
@@ -143,7 +144,9 @@ font-face: DIN, '/fonts'
 	font-style: normal;
 ```
 
-#####size: [width, height] - cool dimensions shortener:
+#####size: [width, height] -
+
+cool dimensions shortener:
 
 ```css
 .box
