@@ -15,7 +15,7 @@ npm install dookie-css
 
 ### Express.js
 
-For express or connect framework you can simply include dookie ``middleware`` method into stylus' compiler:
+For express or connect framework you can simply include dookie ``middleware`` method into Stylus' compiler:
 
 ```javascript
 var dookie = require('dookie-css');
@@ -32,7 +32,7 @@ More about Stylus middleware [here](http://learnboost.github.io/stylus/docs/midd
 
 ### Other environments
 
-As for pure node.js or some other cases dookie has method called ``css``, here is an example of simple static ``server.js`` using stylus:
+As for pure node.js or some other cases dookie has method called ``css``. Here is an example of simple static ``server.js`` using Stylus + dookie:
 
 ```javascript
 var	fs = require('fs');
@@ -56,7 +56,7 @@ function handler(request, response) {
 
 // use stylus for styling
 stylus(str)
-	.use(dookie.css())
+	.use(dookie.css()) // call dookie
 	.render(function (err, css) {
 		if (err) {
 			throw err;
@@ -73,11 +73,18 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ##### Reset global mixins
 
-``reset()`` - simple base and recommended reset
+``reset()`` - simple base and recommended reset;
 
-``normalize()`` - popular [normalize.css](https://github.com/necolas/normalize.css/) reset
+``normalize()`` - popular [normalize.css](https://github.com/necolas/normalize.css/) reset;
 
-``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes)
+``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes);
+
+##### Common useful helpers
+
+``block()``, ``inline-block()``, ``hide()`` - shorter replacements for ``display: block | inline-block | none`` respectively;
+
+``upcase()``, ``lowcase()``, ``nodecorate()`` - frequently used text transformation and decoration properties shorthands;
+
 
 
 More to do..
