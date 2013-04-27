@@ -13,7 +13,7 @@ At first install package into your project:
 npm install dookie-css
 ```
 
-### Express.js
+### Express.js (Connect)
 
 For express or connect framework you can simply include dookie ``middleware`` method into Stylus' compiler:
 
@@ -83,29 +83,15 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 Shorter replacements for ``display: block | inline-block | none`` respectively:
 
-``block()``
-
-``inline-block()``
-
-``hide()``
+``block()``, ``inline-block()``, ``hide()``
 
 Frequently used text transformation and decoration properties shorthands:
 
-``reset-case()``
-
-``upcase()``
-
-``lowcase()``
-
-``nodecorate()``
+``reset-case()``, ``upcase()``, ``lowcase()``, ``nodecorate()``
 
 Font styles:
 
-``bold()``
-
-``italic()``
-
-``normal()``
+``bold()``, ``italic()``, ``normal()``
 
 ``fs: [your font-size]`` - font-size shortener
 
@@ -123,6 +109,10 @@ h2
 	block()
 	nodecorate()
 ```
+
+``clearfix()`` - basic clearfix mixin, simply add it to your class name or call ``base-classes()`` mixin within your project to have it in ``.clearfix`` class;
+
+#####Global mixins
 
 More to do..
 
