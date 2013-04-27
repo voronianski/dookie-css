@@ -71,7 +71,9 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ## API Documentation
 
-#### Reset global mixins
+### Reset mixins
+
+These helpers are global and should be called from file root.
 
 ``reset()`` - simple base and recommended reset;
 
@@ -79,7 +81,7 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes);
 
-#### Common useful helpers
+### Common useful helpers
 
 Shorter replacements for ``display: block | inline-block | none`` respectively:
 
@@ -118,10 +120,73 @@ h2
 
 basic clearfix, simply add it to your class name or call [global mixin](https://github.com/voronianski/dookie-css#global-mixins "Global mixins") ``base-classes()`` within your project to have it in ``.clearfix`` class;
 
-####Global mixins
+#####size: [width, height] -
+
+cool dimensions shortener, example:
+
+```css
+.box
+	size: 30px
+
+.longbox
+	size: 100px 20px
+
+/* yields => */
+.box {
+	width: 30px;
+	height: 30px;
+}
+
+.longbox {
+	width: 100px;
+	height: 20px;
+}
+```
+
+#####bg: [path], [args optional] -
+
+background mixin shortener, example:
+
+```css
+.logo
+	bg: 'logo.png'
+
+.cat
+	bg: 'cat.jpg', 100px 80px no-repeat #DDD
+
+/* yields => */
+.logo {
+	background: url("../images/logo.jpg") no-repeat;
+}
+
+.cat {
+	background: url("../images/cat.jpg") 100px 80px no-repeat #DDD;
+}
+```
+
+#####image-block: [path], [dimensions optional] -
+
+mixin that replaces block with image specified in it, *note:* ``.png`` images could skip dimensions, because of Stylus native ``image-size()`` built-in function, example:
+
+```css
+.replacer
+	image-block: 'default.png'
+
+/* yields => */
+.replacer {
+	background: url("../images/default.png") no-repeat;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	width: 300px;
+	height: 200px;
+}
+```
+
+###Global mixins
 
 As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
-
+f
 #####base-classes() -
 
 adds couple of useful classes that you might add anyways, full list of them:
@@ -153,29 +218,6 @@ font-face: DIN, '/fonts'
 		 url('DIN.svg#DIN') format('svg');
 	font-weight: normal;
 	font-style: normal;
-```
-
-#####size: [width, height] -
-
-cool dimensions shortener:
-
-```css
-.box
-	size: 30px
-
-.longbox
-	size: 100px 20px
-
-/* in css this becomes => */
-.box {
-	width: 30px;
-	height: 30px;
-}
-
-.longbox {
-	width: 100px;
-	height: 20px;
-}
 ```
 
 

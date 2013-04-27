@@ -144,18 +144,18 @@ retina(path, width, height, args...)
 /*
  * Image replacing mixin
  * uses stylus' built-in image-size() does not support JPEG yet
- * set 'complete' mode to use all formats and not depend on original but you'll need to specify dimensions by hand
+ * set dimensions by hand to use all formats and not depend on original
  * e.g. image-block: 'test.png'
- * e.g. image-block: 'test.jpg' complete 300 200
+ * e.g. image-block: 'test.jpg' 300 200
  */
-image-block(path, mode = null, dimensions...)
+image-block(path, dimensions...)
 	url = img-path + path
 
 	bg(path) if path
 	font: 0/0 a
 	text-shadow: none
 	color: transparent
-	if mode == complete
+	if length(dimensions) > 0
 		size: unit(dimensions[0], px) unit(dimensions[1], px)
 	else
 		size: image-size(url)[0] image-size(url)[1]
