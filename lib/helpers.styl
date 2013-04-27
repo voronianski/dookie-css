@@ -165,19 +165,25 @@ image-block(path, dimensions...)
  * @param 'path' - sprite image path
  * @param 'grid' - your sprite grid step (can be with gridX & gridY)
  * @param, 'x', 'y' -  square counts starting from 0
- * e.g. sprite-grid: 1, 5, 32px
+ * e.g. sprite: 1, 5, 32px
  */
-sprite(x = 0, y = 0, grid...)
+-sprite(x = 0, y = 0, grid...)
 	if length(grid) > 1
 		background-position: unit(x*grid[0]*-1, px) unit(y*grid[1]*-1, px)
 	else
 		background-position: unit(x*grid*-1, px) unit(y*grid*-1, px)
 
+// basic sprite mixin
+// e.g. sprite-grid: 'test.png' 1 5 16px 24px
+sprite-grid(path, x = 0, y = 0, grid...)
+	bg: path
+	-sprite: x y grid
+
 // mixin that replaces text with an icon
 // e.g. sprite-replace: 'test.png' 1 5 16px 24px
 sprite-replace(path, x = 0, y = 0, grid...)
 	bg: path
-	sprite: x y grid
+	-sprite: x y grid
 	text-indent: -999em
 	letter-spacing: -999em
 	overflow: hidden
@@ -188,10 +194,9 @@ sprite-inline(path, x = 0, y = 0, width, height, grid...)
 	&:before
 		inline-block()
 		bg: path
-		sprite: x y grid
+		-sprite: x y grid
 		content: ''
-		width: width
-		height: height
+		size: width height
 
 // mixin for padded icons
 // e.g. sprite-padded: 'test.png' 1 5 18px 18px 10px 5px 32px
@@ -199,10 +204,9 @@ sprite-padded(path, x = 0, y = 0, width, height, top, left, grid...)
 	&:before
 		absolute: top left
 		bg: path
-		sprite: x y grid
+		-sprite: x y grid
 		content: ''
-		width: width
-		height: height
+		size: width height
 
 /*
  * Heading mixin

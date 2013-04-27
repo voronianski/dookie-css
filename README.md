@@ -95,11 +95,11 @@ Font styles:
 
 ``bold()``, ``italic()``, ``normal()``
 
-#####fs: [your font-size] -
+#####fs: [your font-size]
 
 font-size shortener;
 
-#####fw: [your font-weight] -
+#####fw: [your font-weight]
 
 font-weight shortener;
 
@@ -116,11 +116,11 @@ h2
 	nodecorate()
 ```
 
-#####clearfix() -
+#####clearfix()
 
 basic clearfix, simply add it to your class name or call [global mixin](https://github.com/voronianski/dookie-css#global-mixins "Global mixins") ``base-classes()`` within your project to have it in ``.clearfix`` class;
 
-#####size: [width, height] -
+#####size: [width, height]
 
 cool dimensions shortener, example:
 
@@ -143,7 +143,7 @@ cool dimensions shortener, example:
 }
 ```
 
-#####bg: [path], [args optional] -
+#####bg: [path], [args optional]
 
 background mixin shortener, example:
 
@@ -152,7 +152,7 @@ background mixin shortener, example:
 	bg: 'logo.png'
 
 .cat
-	bg: 'cat.jpg', 100px 80px no-repeat #DDD
+	bg: 'cat.jpg' 100px 80px no-repeat #DDD
 
 /* yields => */
 .logo {
@@ -164,7 +164,7 @@ background mixin shortener, example:
 }
 ```
 
-#####image-block: [path], [dimensions optional] -
+#####image-block: [path], [dimensions optional]
 
 mixin that replaces block with image specified in it.
 
@@ -185,7 +185,7 @@ mixin that replaces block with image specified in it.
 }
 ```
 
-#####text-overflow: [width], [type optional] -
+#####text-overflow: [width], [type optional]
 
 useful when long text line need to be overflowed, default type is *ellipsis*, example:
 
@@ -202,15 +202,15 @@ useful when long text line need to be overflowed, default type is *ellipsis*, ex
 }
 ```
 
-#####text-hide() -
+#####text-hide()
 
 hiding text mixin;
 
-#####no-select() -
+#####no-select()
 
 disallow user to select element;
 
-#####opacity: [opacity] -
+#####opacity: [opacity]
 
 same as native css property but if your settings set ``ie-support`` to ``true`` mixin adds old-school IE ``filter`` property by itself;
 
@@ -220,7 +220,7 @@ cool pure css triangle mixin, example:
 
 ```css
 .triangle
-	down 15px #F80
+	triangle: down 15px #F80
 
 /* yields => */
 .triangle {
@@ -244,11 +244,11 @@ Dookie allows you to shorten css element positioning while using simply one line
 
 #####static: [name value], ...
 
-######Examples:
+######Example:
 
 ```css
 .box
-	absolute: top 10px, left 15px
+	absolute: top 10px left 15px
 
 /* yields => */
 .box {
@@ -258,11 +258,45 @@ Dookie allows you to shorten css element positioning while using simply one line
 }
 ```
 
+###Sprites
+
+Dookie has several helpers to simplify your work with sprites.
+
+#####sprite-grid: [path], [x], [y], [grid]
+
+basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts where icon is placed and *[grid]* param is your grid step (also can be as 2 params - ``gridX`` and ``gridY``), example:
+
+```css
+.sprite-pic
+	sprite-grid: 'sprite.png' 2 5 16px
+
+
+/* yields => */
+.sprite-pic {
+	background: url("../images/sprite.png") no-repeat;
+	background-position: -64px -32px;
+}
+```
+
+#####sprite-replace: [path], [x], [y], [grid]
+
+same as previous one but also replaces text within an element with icon from the sprite;
+
+#####sprite-inline: [path], [x], [y], [width], [height], [grid]
+
+it copes with typical use cases for inline images like icons next to text links, currently sets icon only before the text;
+
+#####sprite-padded: [path], [x], [y], [width], [height], [grid]
+
+this use case comes up when text isn’t allowed to wrap around a sprite image;
+
+*Note:* Nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited");
+
 ###Global mixins
 
 As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
-f
-#####base-classes() -
+
+#####base-classes()
 
 adds couple of useful classes that you might add anyways, full list of them:
 
@@ -270,11 +304,11 @@ adds couple of useful classes that you might add anyways, full list of them:
 .left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
 ```
 
-#####text-selection: [highlight color], [text color is 'white' unless specified] -
+#####text-selection: [highlight color], [text color is 'white' unless specified]
 
 selection background and text color;
 
-#####font-face: [name], [folder], [weight optional], [style optional] -
+#####font-face: [name], [folder], [weight optional], [style optional]
 
 [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
@@ -302,7 +336,7 @@ More to do..
 
 ## Why dookie?!
 
-Because it's awesome [Green Day's](http://en.wikipedia.org/wiki/Green_Day-_Dookie "Dookie album wiki") album from childhood :)
+Because it's awesome [Green Day's](http://en.wikipedia.org/wiki/Green_Day-_Dookie "Dookie album wiki") album from my childhood :)
 
 ---
 
