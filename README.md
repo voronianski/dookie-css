@@ -114,13 +114,17 @@ h2
 
 #####Global mixins
 
-As reset helpers these mixins are global and should be called not within css selector but in file root.
+As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins) these mixins are global and should be called not within css selector but in file root.
 
-``base-classes()`` - adds couple of useful classes that you might add anyways: ``.left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix``;
+``base-classes()`` - adds couple of useful classes that you might add anyways, full list of them:
+
+```css
+.left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
+```
 
 ``text-selection: [highlight color], [text color is 'white' unless specified]`` - selection background and text color;
 
-``font-face: [name], [folder], [weight optional], [style optional]`` - @font-face mixin, keep in mind that font name should be the same as font filename;
+``font-face: [name], [folder], [weight optional], [style optional]`` - [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
 ######Example:
 
