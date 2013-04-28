@@ -77,14 +77,14 @@ Dookie contains default configuration [settings.styl](https://github.com/voronia
 
 ######Examples:
 
-Here is which custom ``_settings.styl`` file specifies vendors that are needed in app, and path to folder with images:
+Here is custom ``_settings.styl`` file which specifies vendors that are needed, and path to the folder with images:
 
 ```css
 img-path = '../images/'
 vendors = webkit moz
 ```
 
-Now in your main Stylus file ``@import`` configuration easily and start to use dookie:
+Now in your main Stylus file add ``@import`` configuration and start to use dookie easily:
 
 ```css
 @import '_settings'
@@ -320,40 +320,15 @@ basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts
 
 same as previous one but also replaces text within an element with icon from the sprite;
 
-*Note:* Here's nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited") with Stylus and dookie they can be achived easily, examples:
-
-Inline images typical use cases for are icons next to text links, currently sets icon only before the text;
-
-```html
-<a href="#" class="amazon">Buy on Amazon</a>
-```
-
-```css
-.amazon:before
-	inline-block()
-	content: ''
-	size: 18px
-	sprite-grid: 'sprite.png' 1 5 18px
-
-/* yields => */
-.amazon:before {
-	display: inline-block;
-	content: '';
-	width: 18px;
-	height: 18px;
-	background: url("../images/sprite.png") no-repeat;
-	background-position: -36px -18px;
-}
-
-```
-
 #####sprite-inline: [path], [x], [y], [width], [height], [grid]
 
+inline images typical use cases for are icons next to text links, currently sets icon only before the text;
 
 #####sprite-padded: [path], [x], [y], [width], [height], [grid]
 
 this use case comes up when text isn’t allowed to wrap around a sprite image;
 
+*Note:* nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited");
 
 ###Vendor prefixes
 
@@ -506,12 +481,11 @@ font-face: DIN, '/fonts'
 	font-style: normal;
 ```
 
+##Contribute
 
+##Test
 
-
-More to do..
-
-## Why dookie?!
+##Why dookie?!
 
 Because it's awesome [Green Day's](http://en.wikipedia.org/wiki/Green_Day-_Dookie "Dookie album wiki") album from my childhood :)
 
