@@ -359,7 +359,7 @@ Dookie intelligently simplifies usage of css properties that mostly need to be p
 
 ###Easings
 
-Custom timing functions for [ui-transitions](http://www.ui-transitions.com/), see it in action [here](http://example.com):
+Custom timing functions useful for [ui-transitions](http://www.ui-transitions.com/), see all of them in action [here](http://easings.net):
 
 #####ease-in- quad, cubic, quart, quint, sine, expo, circ, back
 
@@ -382,6 +382,70 @@ Custom timing functions for [ui-transitions](http://www.ui-transitions.com/), se
 	transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 ```
+
+###Gradients
+
+#####linear-gradient([start], [stops...])
+
+mixin should be called within the property (``background-image`` or ``background`` depends on what you prefer), example:
+
+```css
+.gradient
+	background-image: linear-gradient(red, orange, yellow 80%)
+
+/* yields => */
+.gradient {
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f00), color-stop(0.33333333333333326, #ffa500), color-stop(0.8, #ff0));
+	background-image: -moz-linear-gradient(top, #f00 0%, #ffa500 33.33333333333333%, #ff0 80%);
+	background-image: -webkit-linear-gradient(top, #f00 0%, #ffa500 33.33333333333333%, #ff0 80%);
+	background-image: -o-linear-gradient(top, #f00 0%, #ffa500 33.33333333333333%, #ff0 80%);
+	background-image: -ms-linear-gradient(top, #f00 0%, #ffa500 33.33333333333333%, #ff0 80%);
+	background-image: linear-gradient(top, #f00 0%, #ffa500 33.33333333333333%, #ff0 80%);
+}
+```
+
+#####radial-gradient([stops...])
+
+same as previous one but radial, example:
+
+```css
+.circle
+	background-image: radial-gradient(#f1c40f, #f39c12 50%)
+
+/* yields => */
+.circle {
+	background-image: -webkit-gradient(radial, center center 0px, center center 100%, color-stop(0, #f1c40f), color-stop(0.5, #f39c12), );
+	background-image: -moz-radial-gradient(center, ellipse cover, #f1c40f 0%, #f39c12 50%);
+	background-image: -webkit-radial-gradient(center, ellipse cover, #f1c40f 0%, #f39c12 50%);
+	background-image: -o-radial-gradient(center, ellipse cover, #f1c40f 0%, #f39c12 50%);
+	background-image: -ms-radial-gradient(center, ellipse cover, #f1c40f 0%, #f39c12 50%);
+	background-image: radial-gradient(ellipse at center, #f1c40f 0%, #f39c12 50%);
+}
+```
+
+#####gradient: [colorStart], [colorStop]
+
+shorthand for two colors linear-gradient, example:
+
+```css
+.box
+	gradient: #F80 #F00
+
+/* yields => */
+.box {
+	background: #f00;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f80), color-stop(1, #f00));
+	background-image: -moz-linear-gradient(top, #f80 0%, #f00 100%);
+	background-image: -webkit-linear-gradient(top, #f80 0%, #f00 100%);
+	background-image: -o-linear-gradient(top, #f80 0%, #f00 100%);
+	background-image: -ms-linear-gradient(top, #f80 0%, #f00 100%);
+	background-image: linear-gradient(top, #f80 0%, #f00 100%);
+}
+```
+
+#####simple-gradient: [color], [strength percents|default is 10%]
+
+generates linear-gradient from one color;
 
 ###Global mixins
 
