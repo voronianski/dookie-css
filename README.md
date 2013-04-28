@@ -1,11 +1,11 @@
 ![Green Day's Dookie button](http://www.goodrock.com/images/Product/medium/b2402.jpg)
 
-# doookie-css
+#doookie-css
 
 CSS library built on top of the [Stylus](https://github.com/learnboost/stylus "Stylus") preprocessor.
 It provides a couple of useful stylus mixins, utilities and components.
 
-## How to install
+##How to install
 
 At first install package into your project:
 
@@ -30,7 +30,7 @@ app.configure(function(){
 
 More about Stylus middleware [here](http://learnboost.github.io/stylus/docs/middleware.html "Stylus connect middleware").
 
-### Other environments
+###Other environments
 
 As for pure node.js or some other cases dookie has method called ``css``. Here is an example of simple static ``server.js`` using Stylus + dookie:
 
@@ -67,11 +67,32 @@ stylus(str)
 app.listen(8080);
 ```
 
-So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's documentation.
+So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
 
-## API Documentation
+##Documentation
 
-### Reset mixins
+###Settings
+
+Dookie contains default configuration [settings.styl](https://github.com/voronianski/dookie-css/blob/master/lib/settings.styl). So this depends on your needs, but it's recommended to create your own ``_settings.styl`` (could be named whatever you like) and specify or overwrite existed variables.
+
+######Examples:
+
+Here is which custom ``_settings.styl`` file specifies vendors that are needed in app, and path to folder with images:
+
+```css
+img-path = '../images/'
+vendors = webkit moz
+```
+
+Now in your main Stylus file ``@import`` configuration easily and start to use dookie:
+
+```css
+@import '_settings'
+
+...
+```
+
+###Reset mixins
 
 These helpers are global:
 
@@ -81,7 +102,7 @@ These helpers are global:
 
 ``fields-reset()`` - reset input fields from sometimes annoying browser based styles (on *::required*, *::valid*, *::invalid*, etc. pseudo-classes);
 
-### Common useful helpers
+###Common useful helpers
 
 Shorter replacements for ``display: block | inline-block | none`` respectively:
 
@@ -175,6 +196,7 @@ background mixin shortener, example:
 	background: url("../images/cat.jpg") 100px 80px no-repeat #DDD;
 }
 ```
+*Note:* if you specify images folder in your [settings](https://github.com/voronianski/dookie-css#settings) ``img-path`` variable it allows you to not put only picture file name in all dookie mixins;
 
 #####image-block: [path], [dimensions optional]
 
@@ -228,7 +250,7 @@ makes element rounded corners, useful for large ones;
 
 #####opacity: [opacity]
 
-same as native css property but if your settings set ``ie-support`` to ``true`` mixin adds old-school IE ``filter`` property by itself;
+same as native css property but if your [settings](https://github.com/voronianski/dookie-css#settings) set ``ie-support`` to ``true`` mixin adds old-school IE ``filter`` property by itself;
 
 #####triangle: [up|down|left|right], [size|default: 10px], [color|default: #000]
 
