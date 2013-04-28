@@ -73,7 +73,7 @@ So now all dookie utilities can be called within your ``.styl`` files and it's t
 
 ### Reset mixins
 
-These helpers are global and should be called from file root.
+These helpers are global:
 
 ``reset()`` - simple base and recommended reset;
 
@@ -114,6 +114,18 @@ h2
 .link
 	block()
 	nodecorate()
+
+/* yields => */
+h2 {
+	font-size: 2em;
+	font-weight: 500;
+	font-style: italic;
+}
+
+.link {
+	display: block;
+	text-decoration: none;
+}
 ```
 
 #####clearfix()
@@ -122,7 +134,7 @@ basic clearfix, simply add it to your class name or call [global mixin](https://
 
 #####size: [width, height]
 
-cool dimensions shortener, example:
+cool and useful dimensions shortener, example:
 
 ```css
 .box
@@ -210,11 +222,15 @@ hiding text mixin;
 
 disallow user to select element;
 
+#####round()
+
+makes element rounded corners, useful for large ones;
+
 #####opacity: [opacity]
 
 same as native css property but if your settings set ``ie-support`` to ``true`` mixin adds old-school IE ``filter`` property by itself;
 
-#####triangle: [up|down|left|right], [size|default: 10px], [color|default: #000] -
+#####triangle: [up|down|left|right], [size|default: 10px], [color|default: #000]
 
 cool pure css triangle mixin, example:
 
@@ -268,7 +284,7 @@ basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts
 
 ```css
 .sprite-pic
-	sprite-grid: 'sprite.png' 2 5 16px
+	sprite-grid: 'sprite.png' 1 5 32px
 
 
 /* yields => */
@@ -282,15 +298,90 @@ basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts
 
 same as previous one but also replaces text within an element with icon from the sprite;
 
+*Note:* Here's nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited") with Stylus and dookie they can be achived easily, examples:
+
+Inline images typical use cases for are icons next to text links, currently sets icon only before the text;
+
+```html
+<a href="#" class="amazon">Buy on Amazon</a>
+```
+
+```css
+.amazon:before
+	inline-block()
+	content: ''
+	size: 18px
+	sprite-grid: 'sprite.png' 1 5 18px
+
+/* yields => */
+.amazon:before {
+	display: inline-block;
+	content: '';
+	width: 18px;
+	height: 18px;
+	background: url("../images/sprite.png") no-repeat;
+	background-position: -36px -18px;
+}
+
+```
+
 #####sprite-inline: [path], [x], [y], [width], [height], [grid]
 
-it copes with typical use cases for inline images like icons next to text links, currently sets icon only before the text;
 
 #####sprite-padded: [path], [x], [y], [width], [height], [grid]
 
 this use case comes up when text isn’t allowed to wrap around a sprite image;
 
-*Note:* Nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited");
+
+###Vendor prefixes
+
+Dookie intelligently simplifies usage of css properties that mostly need to be prefixed. Only thing that you should do is to setup in your ``_settings.styl`` which prefixes you want to use (by default all of them are included). List of property mixins:
+
+#####box-shadow: [args...]
+
+#####border-radius: [args...]
+
+#####box-sizing: [args...]
+
+#####animation: [args...]
+
+#####transition: [args...]
+
+#####transformation: [args...]
+
+#####perspective: [args...]
+
+#####backface-visibility: [args...]
+
+#####filters: [args...]
+
+*Note:* Properties like ``animation``, ``transition``, ``transform`` and ``perspective`` also include all separate dependent props like ``animation-name``, ``transition-delay``, ``perspective-origin`` etc.
+
+###Easings
+
+Custom timing functions for [ui-transitions](http://www.ui-transitions.com/), see it in action [here](http://example.com):
+
+#####ease-in- quad, cubic, quart, quint, sine, expo, circ, back
+
+#####ease-out- quad, cubic, quart, quint, sine, expo, circ, back
+
+#####ease-in-out- quad, cubic, quart, quint, sine, expo, circ, back
+
+
+######Example:
+```css
+.animated
+	transition: all 300ms ease-in-quad
+
+/* yields => */
+.animated {
+	-webkit-transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	-moz-transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	-o-transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	-ms-transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+```
 
 ###Global mixins
 
