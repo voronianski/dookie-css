@@ -1,0 +1,483 @@
+@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Open\+Sans:400,300,600,700&subset=latin,cyrillic");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+input,
+textarea,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+blockquote,
+q {
+  quotes: "&#8220;" "&#8221;";
+}
+a img {
+  border: none;
+}
+.clear {
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.bullet {
+  list-style: circle;
+}
+.hide {
+  display: none;
+}
+.clearfix {
+  display: block;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+::-moz-selection {
+  background: #c0392b;
+  color: #fff;
+}
+::selection {
+  background: #c0392b;
+  color: #fff;
+}
+body {
+  background: #bcd2ce;
+  color: #2c3e50;
+  font: 14px 'Open Sans', Arial, Helvetica, Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+h1 {
+  font: 4.5em 'Fredoka One', 'Open Sans', Arial, Arial, Helvetica, sans-serif;
+  margin: 60px 0 0;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 800;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+a {
+  color: #c0392b;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  margin-bottom: 15px;
+}
+.wrapper {
+  width: 100%;
+  position: relative;
+  ((null)): 0;
+  ((null)): 0;
+}
+.info {
+  width: 450px;
+  margin: 0 auto 50px;
+  position: relative;
+  ((null)): 0;
+  ((null)): 0;
+  text-align: center;
+  z-index: 2;
+}
+.desc {
+  font-size: 16px;
+  margin: 30px auto;
+  text-align: justify;
+}
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  pointer-events: none;
+  -moz-animation: moveLayer 45s infinite linear;
+  -webkit-animation: moveLayer 45s infinite linear;
+  -o-animation: moveLayer 45s infinite linear;
+  -ms-animation: moveLayer 45s infinite linear;
+  animation: moveLayer 45s infinite linear;
+}
+/* base cloud */
+.cloud {
+  background: #f2f9fe;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -o-border-radius: 200px;
+  -ms-border-radius: 200px;
+  border-radius: 200px;
+}
+.cloud:after,
+.cloud:before {
+  content: '';
+  background: #f2f9fe;
+  z-index: -1;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+}
+/* med clouds */
+.med-1 {
+  width: 175px;
+  height: 55px;
+  position: absolute;
+  top: 300px;
+  left: 750px;
+}
+.med-1:after {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+}
+.med-1:before {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: -45px;
+  right: 25px;
+}
+.med-2 {
+  width: 175px;
+  height: 55px;
+  position: absolute;
+  top: 300px;
+  left: 1950px;
+}
+.med-2:after {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+}
+.med-2:before {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: -45px;
+  right: 25px;
+}
+/* small clouds */
+.sml-1 {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 180px;
+  left: 200px;
+}
+.sml-1:after {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -16px;
+  left: 16px;
+}
+.sml-1:before {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30px;
+  right: 16px;
+}
+.sml-2 {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 60px;
+  left: 1100px;
+}
+.sml-2:after {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -16px;
+  left: 16px;
+}
+.sml-2:before {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30px;
+  right: 16px;
+}
+.sml-3 {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 180px;
+  left: 1400px;
+}
+.sml-3:after {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -16px;
+  left: 16px;
+}
+.sml-3:before {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30px;
+  right: 16px;
+}
+.sml-4 {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 60px;
+  left: 2300px;
+}
+.sml-4:after {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: -16px;
+  left: 16px;
+}
+.sml-4:before {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30px;
+  right: 16px;
+}
+.mark {
+  display: block;
+  background: #c0392b;
+  color: #fff;
+  padding: 6px 10px;
+  margin: 10px auto 25px;
+  text-align: center;
+  -moz-transition: all 300ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+.mark:hover {
+  background: #d24435;
+  text-decoration: none;
+}
+pre {
+  line-height: 12px;
+}
+code {
+  display: block;
+  color: #bbdaff;
+  background: #002451;
+  padding: 6px 10px;
+  font: 12px/14px 'Consolas', 'Bitstream Vera Sans Mono', 'Inconsolata', 'Lucida Console', 'Courier New', 'Courier', Consolas, Inconsolata, "Courier", "Courier New", monospace;
+}
+.buttons {
+  padding: 0 0 10px;
+}
+.github {
+  width: 80px;
+}
+.github-ribbon,
+.github-ribbon:hover {
+  display: block;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: #fff;
+  background: #c0392b;
+  padding: 8px 50px;
+  position: absolute;
+  top: 35px;
+  right: -45px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 1000;
+}
+@-moz-keyframes moveLayer {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1200px;
+  }
+}
+@-webkit-keyframes moveLayer {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1200px;
+  }
+}
+@-o-keyframes moveLayer {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1200px;
+  }
+}
+@-ms-keyframes moveLayer {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1200px;
+  }
+}
+@keyframes moveLayer {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1200px;
+  }
+}

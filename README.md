@@ -18,7 +18,8 @@ npm install dookie-css
 For express or connect framework you can simply include dookie ``middleware`` method into Stylus' compiler:
 
 ```javascript
-var dookie = require('dookie-css');
+var	stylus = require('stylus'),
+	dookie = require('dookie-css');
 
 ...
 
@@ -35,24 +36,10 @@ More about Stylus middleware [here](http://learnboost.github.io/stylus/docs/midd
 As for pure node.js or some other cases dookie has method called ``css``. Here is an example of simple static ``server.js`` using Stylus + dookie:
 
 ```javascript
-var	fs = require('fs');
-var http = require('http');
-var	static = require('node-static');
-var	stylus = require('stylus');
-var	dookie = require('dookie-css');
+var	stylus = require('stylus'),
+	dookie = require('dookie-css');
 
-var app = http.createServer(handler);
-
-var str = fs.readFileSync(__dirname + '/style.styl', 'utf8');
-
-var files = new static.Server('./public');
-
-// serve files on request
-function handler(request, response) {
-	request.addListener('end', function() {
-		files.serve(request, response);
-	});
-}
+...
 
 // use stylus for styling
 stylus(str)
@@ -61,13 +48,11 @@ stylus(str)
 		if (err) {
 			throw err;
 		}
-		fs.writeFileSync(__dirname + '/public/css/style.css', css, 'utf8');
+		// do smth with 'css'
 	});
-
-app.listen(8080);
 ```
 
-So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
+Check out examples folder to see how dookie can be introduced with pure node.js static server. So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
 
 ##Documentation
 
@@ -84,7 +69,7 @@ img-path = '../images/'
 vendors = webkit moz
 ```
 
-Now in your main Stylus file add ``@import`` configuration and start to use dookie easily:
+Now in your main Stylus file we add ``@import`` configuration and start to use dookie easily:
 
 ```css
 @import '_settings'
@@ -94,7 +79,7 @@ Now in your main Stylus file add ``@import`` configuration and start to use dook
 
 ###Reset mixins
 
-These helpers are global:
+These helpers are global (this also means you should use them in mixin form - ``mixin(args)`` instead of ``mixin: args``):
 
 ``reset()`` - simple base and recommended reset;
 
@@ -110,7 +95,7 @@ Shorter replacements for ``display: block | inline-block | none`` respectively:
 
 Frequently used text transformation and decoration properties shorthands:
 
-``reset-case()``, ``upcase()``, ``lowcase()``, ``nodecorate()``;
+``reset-case()``, ``upcase()``, ``lowcase()``, ``nodecorate()``, ``underline()``, etc.;
 
 Font styles:
 
@@ -456,20 +441,19 @@ adds couple of useful classes that you might add anyways, full list of them:
 .left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
 ```
 
-#####text-selection: [highlight color], [text color|default: 'white']
+#####text-selection([highlight color], [text color|default: 'white'])
 
 selection background and text color;
 
-#####font-face: [name], [folder], [weight optional], [style optional]
+#####font-face([name], [folder], [weight optional], [style optional])
 
 [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;
 
 ######Example:
 
 ```css
-font-face: DIN, '/fonts'
+font-face(DIN, '/fonts')
 
-/* in css this becomes => */
 @font-face
 	font-family: 'DIN';
 	src: url('DIN.eot');

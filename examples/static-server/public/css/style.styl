@@ -1,0 +1,192 @@
+@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Open\+Sans:400,300,600,700&subset=latin,cyrillic");
+
+reset()
+base-classes()
+text-selection(#c0392b)
+
+body
+	background: #BCD2CE
+	color: #2c3e50
+	font: 14px 'Open Sans', Arial, Helvetica, sans-serif
+	overflow-x: hidden
+
+h1
+	font: 4.5em 'Fredoka One', 'Open Sans', Arial, sans-serif
+	margin: 60px 0 0
+	no-select()
+	cursor: default
+
+h2
+	fs: 20px
+	fw: 800
+	margin-bottom: 15px
+
+h3
+	fs: 18px
+	fw: 800
+	no-select()
+	cursor: default
+
+a
+	color: #c0392b
+	nodecorate()
+
+a:hover
+	underline()
+
+p
+	margin-bottom: 15px
+
+.wrapper
+	width: 100%
+	relative()
+
+.info
+	width: 450px
+	margin: 0 auto 50px
+	relative()
+	center()
+	z-index: 2
+
+.desc
+	fs: 16px
+	margin: 30px auto
+	justify()
+
+.background
+	absolute: top 0px left 0px
+	z-index: 1;
+	pointer-events: none;
+	animation: moveLayer 45s infinite linear
+
+@keyframes moveLayer
+	0%
+		left: 0px
+	100%
+		left: -1200px
+
+/* base cloud */
+.cloud
+	background: #f2f9fe
+	border-radius: 200px
+
+.cloud:after, .cloud:before
+	content: ''
+	background: #f2f9fe
+	z-index: -1
+	round()
+
+/* med clouds */
+.med-1
+	size: 175px 55px
+	absolute: top 300px left 750px
+
+.med-1:after
+	size: 50px
+	absolute: top -25px left 25px
+
+.med-1:before
+	size: 90px
+	absolute: top -45px right 25px
+
+.med-2
+	size: 175px 55px
+	absolute: top 300px left 1950px
+
+.med-2:after
+	size: 50px
+	absolute: top -25px left 25px
+
+.med-2:before
+	size: 90px
+	absolute: top -45px right 25px
+
+/* small clouds */
+.sml-1
+	size: 120px 40px
+	absolute: top 180px left 200px
+
+.sml-1:after
+	size: 35px
+	absolute: top -16px left 16px
+
+.sml-1:before
+	size: 60px
+	absolute: top -30px right 16px
+
+.sml-2
+	size: 120px 40px
+	absolute: top 60px left 1100px
+
+.sml-2:after
+	size: 35px
+	absolute: top -16px left 16px
+
+.sml-2:before
+	size: 60px
+	absolute: top -30px right 16px
+
+.sml-3
+	size: 120px 40px
+	absolute: top 180px left 1400px
+
+.sml-3:after
+	size: 35px
+	absolute: top -16px left 16px
+
+.sml-3:before
+	size: 60px
+	absolute: top -30px right 16px
+
+.sml-4
+	size: 120px 40px
+	absolute: top 60px left 2300px
+
+.sml-4:after
+	size: 35px
+	absolute: top -16px left 16px
+
+.sml-4:before
+	size: 60px
+	absolute: top -30px right 16px
+
+.mark
+	block()
+	background: #c0392b
+	color: #fff
+	padding: 6px 10px
+	margin: 10px auto 25px
+	center()
+	transition: all 300ms ease-in
+
+.mark:hover
+	background: lighten(#c0392b, 10%)
+	nodecorate()
+
+pre
+	line-height: 12px
+
+code
+	block()
+	color: #bbdaff
+	background: #002451
+	padding: 6px 10px
+	font: 12px/14px 'Consolas', 'Bitstream Vera Sans Mono', 'Inconsolata', 'Lucida Console', 'Courier New', 'Courier', monospace
+
+.buttons
+	padding: 0 0 10px
+
+.github
+	width: 80px
+
+.github-ribbon,
+.github-ribbon:hover
+	block()
+	nodecorate()
+	lowcase()
+	color: #fff
+	background: #c0392b
+	padding: 8px 50px
+	absolute: top 35px right -45px
+	transform: rotate(45deg)
+	z-index: 1000

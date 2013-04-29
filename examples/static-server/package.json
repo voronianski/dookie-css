@@ -1,0 +1,15 @@
+{
+  "name": "dookie-css-example",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "engines": {
+    "node": ">=0.8.22"
+  },
+  "dependencies": {
+    "stylus": "~0.32.1",
+    "colors": "~0.6.x",
+    "dookie": "~1.0.0"
+    "node-static": "~0.6.9"
+  }
+}

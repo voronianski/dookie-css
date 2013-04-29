@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>Dookie framework</title>
+	<link rel="icon" href="/images/donut-icon-16.png"/>
+	<link rel="apple-touch-icon" href="/images/donut-icon-32.png"/>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="info">
+			<h1>Dookie</h1>
+			<h3>{ stylus driven css library }</h3>
+			<div class="desc">
+				<h2>What is Dookie?</h2>
+				<p>Library that is built on top of <a href="http://learnboost.github.io/stylus/" title="Stylus" target="_blank">Stylus</a> preprocessor and provides a couple of useful mixins, utilities and functions. If you never used Stylus before you should give it a try, because together with <a href="https://github.com/voronianski/dookie-css" title="Dookie" target="_blank">Dookie</a> it will amazingly simplify the routine...</p>
+
+				<h2>How to use?</h2>
+				<p>At first install package via npm:</p>
+				<pre>
+					<code>npm install dookie-css</code>
+				</pre>
+
+				<p>And then, please, tell Stylus that you want to use Dookie:</p>
+				<pre>
+					<code>stylus(str)
+  .use(dookie.css())
+  .render(function (err, css) {
+    if (err) throw err;
+    // css is flavored with dookie already :)
+});</code>
+				</pre>
+
+				<a href="https://github.com/voronianski/dookie-css#documentation" title="Dookie docs" target="_blank" class="mark">Full documentation is available at github repository</a>
+
+				<h2>Want to participate?</h2>
+				<p>Project is in beta yet so suggestions and collaboration are highly appreciated!</p>
+			</div>
+
+			<div class="buttons">
+				<div class="github left">
+					<iframe src="http://ghbtns.com/github-btn.html?user=voronianski&repo=dookie-css&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+				</div>
+
+				<div class="twitter left">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="voronianski" data-hashtags="dookie">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+			</div>
+		</div>
+
+		<div class="background">
+			<div class="cloud sml-1"></div>
+			<div class="cloud sml-2"></div>
+			<div class="cloud med-1"></div>
+			<div class="cloud sml-3"></div>
+			<div class="cloud sml-4"></div>
+			<div class="cloud med-2"></div>
+		</div>
+	</div>
+
+<a href="https://github.com/voronianski/dookie-css" title="Dookie at github" class="github-ribbon" target="_blank">Fork on github</a>
+<iframe src="http://labs.voronianski.com/media/frames/pixelhunter_black_24.html" name="pixelhunter_button" allowtransparency="true" scrolling="no" width="24" height="24" style="position: fixed; bottom: 10px; right: 10px; z-index: 100;">Your browser does not support iframe.</iframe>
+
+</body>
+</html>
