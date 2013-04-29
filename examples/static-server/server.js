@@ -1,9 +1,9 @@
-var	fs = require('fs');
+var fs = require('fs');
 var http = require('http');
-var	static = require('node-static');
+var static = require('node-static');
 var colors = require('colors');
-var	stylus = require('stylus');
-var	dookie = require('../../'); // TO DO: set 'dookie-css' before publish
+var stylus = require('stylus');
+var dookie = require('../../'); // TO DO: set 'dookie-css' before publish
 
 var app = http.createServer(handler);
 
