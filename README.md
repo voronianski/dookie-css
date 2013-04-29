@@ -39,7 +39,7 @@ var	fs = require('fs');
 var http = require('http');
 var	static = require('node-static');
 var	stylus = require('stylus');
-var	dookie = require('../dookie-css');
+var	dookie = require('dookie-css');
 
 var app = http.createServer(handler);
 
