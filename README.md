@@ -52,7 +52,7 @@ stylus(str)
 	});
 ```
 
-Check out examples folder to see how dookie can be introduced with pure node.js static server. So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
+Check out *./examples* folder to see how dookie can be introduced with pure node.js static [server](https://github.com/voronianski/dookie-css/blob/master/examples/static-server/server.js). So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
 
 ##Documentation
 
@@ -95,7 +95,7 @@ Shorter replacements for ``display: block | inline-block | none`` respectively:
 
 Frequently used text transformation and decoration properties shorthands:
 
-``reset-case()``, ``upcase()``, ``lowcase()``, ``nodecorate()``, ``underline()``, etc.;
+``reset-case()``, ``upcase()``, ``lowcase()``, ``nodecorate()``, ``underline()``, etc.
 
 Font styles:
 
