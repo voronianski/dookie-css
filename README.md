@@ -196,7 +196,7 @@ background mixin shortener, example:
 	background: url("../images/cat.jpg") 100px 80px no-repeat #DDD;
 }
 ```
-*Note:* if you specify images folder in your [settings](https://github.com/voronianski/dookie-css#settings) ``img-path`` variable it allows you to not put only picture file name in all dookie mixins;
+*Note:* if you specify images folder in your [settings](https://github.com/voronianski/dookie-css#settings) ``img-path`` variable it allows you to put only picture file name in all dookie mixins;
 
 #####image-block: [path], [dimensions optional]
 
@@ -440,7 +440,7 @@ shorthand for two colors linear-gradient, example:
 }
 ```
 
-#####simple-gradient: [color], [strength percents|default is 10%]
+#####simple-gradient: [color], [strength percents|default: 10%]
 
 generates linear-gradient from one color;
 
@@ -456,7 +456,7 @@ adds couple of useful classes that you might add anyways, full list of them:
 .left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
 ```
 
-#####text-selection: [highlight color], [text color is 'white' unless specified]
+#####text-selection: [highlight color], [text color|default: 'white']
 
 selection background and text color;
 
