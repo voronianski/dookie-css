@@ -23,4 +23,4 @@ it's recommended to use [nodemon](https://github.com/remy/nodemon) if you do not
 nodemon --legacy-watch --watch public -e styl server.js
 ```
 
-go to to ``localhost:8080`` in your browser, you will see dookie landing page with tiny css clouds :)
+go to to ``localhost:8081`` in your browser, you will see dookie landing page with tiny css clouds :)

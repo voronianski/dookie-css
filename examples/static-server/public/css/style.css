@@ -392,6 +392,11 @@ p {
   padding: 6px 10px;
   margin: 10px auto 25px;
   text-align: center;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
   -moz-transition: all 300ms ease-in;
   -webkit-transition: all 300ms ease-in;
   -o-transition: all 300ms ease-in;
@@ -403,14 +408,19 @@ p {
   text-decoration: none;
 }
 pre {
-  line-height: 12px;
+  line-height: 10px;
 }
 code {
   display: block;
   color: #bbdaff;
-  background: #002451;
-  padding: 6px 10px;
   font: 12px/14px 'Consolas', 'Bitstream Vera Sans Mono', 'Inconsolata', 'Lucida Console', 'Courier New', 'Courier', Consolas, Inconsolata, "Courier", "Courier New", monospace;
+  background: #002049;
+  padding: 6px 10px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
 }
 .buttons {
   padding: 0 0 10px;

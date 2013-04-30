@@ -1,9 +1,11 @@
-var fs = require('fs');
-var http = require('http');
-var static = require('node-static');
-var colors = require('colors');
-var stylus = require('stylus');
-var dookie = require('../../'); // TO DO: set 'dookie-css' before publish
+var fs = require('fs'),
+	http = require('http'),
+	static = require('node-static'),
+	colors = require('colors'),
+	stylus = require('stylus'),
+	dookie = require('../../'); // TO DO: set 'dookie-css' before publish
+
+var port = process.env.PORT || 8081;
 
 var app = http.createServer(handler);
 
@@ -37,5 +39,5 @@ function handler(request, response) {
 	});
 }
 
-app.listen(8080);
-console.log('app started'.green);
+app.listen(port);
+console.log(('dookie example app started on localhost:' + port).green);
