@@ -50,6 +50,9 @@ normal()
 reset-case()
 	text-transform: none
 
+/*
+ * Text align shorthands
+ */
 center()
 	text-align: center
 
@@ -136,7 +139,7 @@ literal-join(string, literals)
 	return result
 
 /*
- * Background mixin (with retina too)
+ * Background mixin
  * e.g. bg: 'logo.png' (with specified img-path in 'settings')
  * e.g. bg: '../img/logo.png' 100px 50px
  */
@@ -144,11 +147,14 @@ bg(path, args...)
 	args = unquote('no-repeat') unless args
 	background: url(img-path path) args
 
-retina(path, width, height, args...)
-	args = unquote('no-repeat') unless args
-	background: url(img-path path) args
-	size: width height
-	background-size: literal-join('', width height)
+/*
+ * Background mixin for retina displays
+ *
+ * use it together with '@media all and (-webkit-min-device-pixel-ratio: 1.5)'
+ */
+bg-retina(path, args...)
+	bg: path, args
+	background-size: contain
 
 /*
  * Image replacing mixin

@@ -169,6 +169,23 @@ describe('dookie-css utilities', function () {
 		});
 	});
 
+	describe('text-overflow() mixin', function () {
+		beforeEach(function (done) {
+			styl = 'text-overflow(300px)';
+
+			stylusHelper(styl, function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				css = res;
+				done();
+			});
+		});
+
+		it('should add ellipsis text overflow', function () {
+			css.trim().should.equal('text-overflow: ellipsis;\nwhite-space: nowrap;\noverflow: hidden;\nwidth: 300px;');
+		});
+	});
+
 	describe('vendor prefixed properties', function () {
 		beforeEach(function (done) {
 			styl = '-prefix(border-radius, 3px)';
@@ -200,6 +217,31 @@ describe('dookie-css utilities', function () {
 
 		it('should translate to css positions', function () {
 			css.trim().should.equal('position: absolute;\ntop: 5px;\nleft: 10px;');
+		});
+	});
+
+	describe('heading() mixin', function () {
+		beforeEach(function (done) {
+			styl = 'heading(24px)';
+
+			stylusHelper(styl, function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				css = res;
+				done();
+			});
+		});
+
+		it('should add font-size', function () {
+			css.should.include('font-size: 24px;')
+		});
+
+		it('should add proper margin', function () {
+			css.should.include('margin: 7.5px 0');
+		});
+
+		it('should take color from settings default-color', function () {
+			css.should.include('color: #aaa;');
 		});
 	});
 

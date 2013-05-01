@@ -181,6 +181,11 @@ background mixin shortener, example:
 	background: url("../images/cat.jpg") 100px 80px no-repeat #DDD;
 }
 ```
+
+#####bg-retina:[path], [args optional]
+
+very similar mixin but adds ``background-size: contain`` property for retina displays (use it together with ``@media all and (-webkit-min-device-pixel-ratio: 1.5)``);
+
 *Note:* if you specify images folder in your [settings](https://github.com/voronianski/dookie-css#settings) ``img-path`` variable it allows you to put only picture file name in all dookie mixins;
 
 #####image-block: [path], [dimensions optional]

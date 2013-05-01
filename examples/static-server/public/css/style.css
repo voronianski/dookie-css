@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Open\+Sans:400,300,600,700&subset=latin,cyrillic");
+@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Pacifico|Open\+Sans:400,300,600,700&subset=latin,cyrillic");
 html,
 body,
 div,
@@ -165,8 +165,9 @@ body {
   overflow-x: hidden;
 }
 h1 {
-  font: 4.5em 'Fredoka One', 'Open Sans', Arial, Arial, Helvetica, sans-serif;
+  font: 5.4em 'Pacifico', 'Open Sans', Arial, Arial, Helvetica, sans-serif;
   margin: 60px 0 0;
+  line-height: 80px;
   -webkit-touch-callout: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -182,7 +183,7 @@ h2 {
 }
 h3 {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 300;
   -webkit-touch-callout: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -190,6 +191,7 @@ h3 {
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+  padding-left: 4px;
 }
 a {
   color: #c0392b;
@@ -199,6 +201,8 @@ a:hover {
   text-decoration: underline;
 }
 p {
+  font-weight: 300;
+  line-height: 24px;
   margin-bottom: 15px;
 }
 .wrapper {
@@ -218,7 +222,7 @@ p {
 }
 .desc {
   font-size: 16px;
-  margin: 30px auto;
+  margin: 50px auto;
   text-align: justify;
 }
 .background {
