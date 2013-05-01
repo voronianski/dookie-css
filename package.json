@@ -4,12 +4,16 @@
   "keywords": [
     "css",
     "stylus",
-    "mixins",
-    "utilities"
+    "mixins"
   ],
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": {
-    "name": "Dmitri Voronianski"
+    "name": "Dmitri Voronianski",
+    "email": "dmitri.voronianski@gmail.com"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha -R nyan test/spec",
+    "screenshot": ""
   },
   "main": "index.js",
   "engines": {
@@ -17,6 +21,10 @@
   },
   "dependencies": {
     "stylus": "~0.32.1"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.9.0"
   },
   "homepage": "https://github.com/voronianski/dookie-css",
   "bugs": "https://github.com/voronianski/dookie-css/issues",

@@ -305,14 +305,6 @@ basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts
 
 same as previous one but also replaces text within an element with icon from the sprite;
 
-#####sprite-inline: [path], [x], [y], [width], [height], [grid]
-
-inline images typical use cases for are icons next to text links, currently sets icon only before the text;
-
-#####sprite-padded: [path], [x], [y], [width], [height], [grid]
-
-this use case comes up when text isn’t allowed to wrap around a sprite image;
-
 *Note:* nice article describing these techniques by [Niels Matthijs](http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/ "CSS Sprites Revisited");
 
 ###Vendor prefixes
@@ -338,6 +330,24 @@ Dookie intelligently simplifies usage of css properties that mostly need to be p
 #####filters: [args...]
 
 *Note:* Properties like ``animation``, ``transition``, ``transform`` and ``perspective`` also include all separate dependent props like ``animation-name``, ``transition-delay``, ``perspective-origin`` etc.
+
+#####-prefix: [property], [args...]
+
+It is also good to know that if you need some property to be prefixed, you can use dookie's ``-prefix`` method while passing into it property name and value, example:
+
+```css
+.box
+	-prefix(some-prop, value1 value2)
+
+/* yields => */
+.box {
+	-webkit-some-prop: value1, value2;
+	-moz-some-prop: value1, value2;
+	-o-some-prop: value1, value2;
+	-ms-some-prop: value1, value2;
+	some-prop: value1, value2;
+}
+```
 
 ###Easings
 

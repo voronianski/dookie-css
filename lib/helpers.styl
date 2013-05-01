@@ -165,7 +165,7 @@ image-block(path, dimensions...)
 	text-shadow: none
 	color: transparent
 	if length(dimensions) > 0
-		size: unit(dimensions[0], px) unit(dimensions[1], px)
+		size: dimensions
 	else
 		size: image-size(url)[0] image-size(url)[1]
 

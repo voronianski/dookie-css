@@ -1,1 +1,1 @@
-# Test dookie-css with casper.js
+# Test dookie-css with mocha.js && casper.js
