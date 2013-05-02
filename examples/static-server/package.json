@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.1",
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "scripts": {
+    "start": "node ./server.js"
+  },
   "engines": {
     "node": ">=0.8.22"
   },

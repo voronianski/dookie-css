@@ -77,6 +77,24 @@ Now in your main Stylus file we add ``@import`` configuration and start to use d
 ...
 ```
 
+######List of global settings:
+
+- ``img-path`` - path to the app folder with images (empty by default);
+
+- ``vendors`` - list of vendors you want to use (by default includes ``webkit``, ``moz``, ``ms``, ``o`` and ``official`` which means unprefixed property);
+
+- ``ie-support`` - set to ``true`` to enable special IE properties like ``filter: alpha(opacity = 100)``;
+
+- ``font-stack`` - global font-family stack;
+
+- ``sans-serif``- ``serif`` and ``monospace`` - default font families;
+
+- ``font-size`` - global font-size variable;
+
+- ``default-color`` - global font color fallback;
+
+Settings file is also a good place to put your own configuration on the project.
+
 ###Reset mixins
 
 These helpers are global (this also means you should use them in mixin form - ``mixin(args)`` instead of ``mixin: args``):

@@ -1,14 +1,14 @@
 #Test dookie-css with mocha.js & casper.js
 
-Dookie uses [mocha.js](http://visionmedia.github.io/mocha) for unit testing of mixins and [casper.js](https://github.com/n1k0/casperjs/) for visualizing them and with ability to see what can be wrong.
+Dookie uses [mocha.js](http://visionmedia.github.io/mocha) for unit testing of mixins and [casper.js](https://github.com/n1k0/casperjs/) for visualizing them.
 
-You can run dookie unit tests with several commands and go with this command into your terminal:
+You can run unit tests with several commands:
 
 ```bash
 npm test
 ```
 
-or this (if you have mocha installed globally):
+or
 
 ```bash
 make test
@@ -22,10 +22,14 @@ To test Dookie visually you'll need to start test server at first:
 node ./test/server.js
 ```
 
-and in **new terminal** window run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
+and in **new terminal window** to run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
+
+```bash
+npm screenshot
+```
 
 ```bash
 make screenshots
 ```
 
-then you can check how mixins actually look like while going into *./test/screenshots* folder.
+Then you can check how mixins actually look like while going into *./test/screenshots* folder.

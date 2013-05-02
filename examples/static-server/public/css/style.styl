@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Pacifico|Open\+Sans:400,300,600,700&subset=latin,cyrillic");
+@import url("http://fonts.googleapis.com/css?family=Fredoka\+One|Open\+Sans:400,300,600,700&subset=latin,cyrillic")
 
 reset()
 base-classes()
@@ -9,9 +9,10 @@ body
 	color: #2c3e50
 	font: 14px 'Open Sans', Arial, Helvetica, sans-serif
 	overflow-x: hidden
+	relative()
 
 h1
-	font: 5.4em 'Pacifico', 'Open Sans', Arial, sans-serif
+	font: 5em 'Fredoka One', 'Open Sans', Arial, sans-serif
 	margin: 60px 0 0
 	line-height: 80px
 	no-select()
@@ -24,7 +25,7 @@ h2
 
 h3
 	fs: 18px
-	fw: 300
+	fw: 800
 	no-select()
 	cursor: default
 	padding-left: 4px
@@ -43,6 +44,7 @@ p
 
 .wrapper
 	width: 100%
+	overflow-x: hidden
 	relative()
 
 .info
@@ -54,13 +56,13 @@ p
 
 .desc
 	fs: 16px
-	margin: 50px auto
+	margin: 50px auto 0
 	justify()
 
 .background
 	absolute: top 0px left 0px
-	z-index: 1;
-	pointer-events: none;
+	z-index: 1
+	pointer-events: none
 	animation: moveLayer 45s infinite linear
 
 @keyframes moveLayer

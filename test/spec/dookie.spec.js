@@ -218,11 +218,28 @@ describe('dookie-css utilities', function () {
 		it('should translate to css positions', function () {
 			css.trim().should.equal('position: absolute;\ntop: 5px;\nleft: 10px;');
 		});
+
+		describe('position mixin without args', function () {
+			beforeEach(function (done) {
+				styl = 'relative()';
+
+				stylusHelper(styl, function (err, res) {
+					should.not.exist(err);
+					should.exist(res);
+					css = res;
+					done();
+				});
+			});
+
+			it('should not contain any additional fields', function () {
+				css.trim().should.equal('position: relative;');
+			});
+		});
 	});
 
 	describe('heading() mixin', function () {
 		beforeEach(function (done) {
-			styl = 'heading(24px)';
+			styl = 'heading()';
 
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
@@ -232,7 +249,7 @@ describe('dookie-css utilities', function () {
 			});
 		});
 
-		it('should add font-size', function () {
+		it('should add font-size from configuration', function () {
 			css.should.include('font-size: 24px;')
 		});
 
@@ -242,6 +259,27 @@ describe('dookie-css utilities', function () {
 
 		it('should take color from settings default-color', function () {
 			css.should.include('color: #aaa;');
+		});
+	});
+
+	describe('display:inline-block with IE support', function () {
+		beforeEach(function (done) {
+			styl = 'inline-block()';
+
+			stylusHelper(styl, function (err, res) {
+				should.not.exist(err);
+				should.exist(res);
+				css = res;
+				done();
+			});
+		});
+
+		it('should contain -moz-inline-stack by default', function () {
+			css.should.include('display: -moz-inline-stack;');
+		});
+
+		it('should add specific IE properties', function () {
+			css.trim().should.equal('display: inline-block;\ndisplay: -moz-inline-stack;\nvertical-align: baseline;\nzoom: 1;\n*display: inline;\n*vertical-align: auto;');
 		});
 	});
 
