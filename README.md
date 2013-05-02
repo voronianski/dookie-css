@@ -83,7 +83,7 @@ Now in your main Stylus file we add ``@import`` configuration and start to use d
 
 - ``vendors`` - list of vendors you want to use (by default includes ``webkit``, ``moz``, ``ms``, ``o`` and ``official`` which means unprefixed property);
 
-- ``ie-support`` - set to ``true`` to enable special IE properties like ``filter: alpha(opacity = 100)`` etc.;
+- ``ie-support`` - set to ``true`` to enable special IE properties like ``filter: alpha(opacity = 100)`` etc.
 
 - ``font-stack`` - global font-family stack;
 

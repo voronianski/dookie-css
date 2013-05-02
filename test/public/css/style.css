@@ -163,7 +163,8 @@ a img {
   font-style: normal;
 }
 .tests {
-  width: 400px;
+  background-color: #fff;
+  width: 800px;
   margin: 0 auto 100px;
   text-align: center;
 }

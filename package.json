@@ -12,8 +12,7 @@
     "email": "dmitri.voronianski@gmail.com"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha -R nyan ./test/spec",
-    "screenshots": "casperjs ./test/runTest.js"
+    "test": "node_modules/.bin/mocha -R nyan ./test/spec"
   },
   "main": "index.js",
   "engines": {

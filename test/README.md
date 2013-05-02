@@ -16,19 +16,19 @@ make test
 
 ##Screenshots
 
-To test Dookie visually you'll need to start test server at first:
+To test Dookie visually you'll need to install all dependencies:
+
+```bash
+npm install
+```
+
+and then start test server:
 
 ```bash
 node ./test/server.js
 ```
 
-and in **new terminal window** to run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
-
-```bash
-npm screenshots
-```
-
-or
+and in **new terminal window** run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
 
 ```bash
 make screenshots

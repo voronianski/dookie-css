@@ -1,4 +1,5 @@
 examples
 node_modules
 test
+/*.jpg
 *.log
