@@ -1,5 +1,5 @@
 {
-  "name": "dookie-css-static-server-example",
+  "name": "dookie-css-express-app-example",
   "private": true,
   "version": "0.0.1",
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "stylus": "~0.32.1",
-    "colors": "~0.6.x",
-    "node-static": "~0.6.9"
+    "express": "~3.2.1",
+    "ejs": "~0.8.3"
   }
 }
