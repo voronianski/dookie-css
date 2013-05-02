@@ -24,7 +24,7 @@ To test Dookie visually you'll need to install all server dependencies in ``./te
 npm install
 ```
 
-and then start testing with command (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
+and then start testing with this command (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
 
 ```bash
 node ./runner.js
@@ -36,4 +36,4 @@ or (from ``./`` root):
 make screenshots
 ```
 
-Then you can check how mixins actually look like while screenshots in the folder.
+Then you can check how mixins actually look like on screenshots in the folder.
