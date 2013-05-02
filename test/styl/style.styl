@@ -1,0 +1,71 @@
+@import '_config'
+
+reset()
+base-classes()
+font-face(OpenSansRegular, '../fonts')
+
+.tests
+	width: 400px
+	margin: 0 auto 100px
+	center()
+
+.heading
+	heading(24px)
+	bold()
+	italic()
+
+.box
+	size: 400px 100px
+	margin: 10px auto
+
+.bg-color
+	background-color: #F80
+
+.linear-gradient
+	background-image: linear-gradient(bottom, red, green 50%, blue)
+
+.radial-gradient
+	background-image: radial-gradient(red, blue 80%)
+
+.simple-gradient
+	simple-gradient: #F80, 30%
+
+.gradient
+	gradient: #F80, #F00
+
+.absolute-size-vendored
+	size: 50px
+	absolute: top 15px left 15px
+	transform: rotate(45deg)
+
+.image-block
+	image-block: '../images/dookie.jpg' 225px
+
+.sprite
+	size: 44px
+	sprite-grid: '../images/pixelhunter_logo.png' 0 1 44px
+
+.text-hidden
+	text-hide()
+
+.text-overflow
+	font-family: OpenSansRegular
+	text-overflow(400px)
+
+.triangle
+	triangle: up 100px #555
+	margin: 15px auto
+
+.animate
+	size: 50px
+	rounded()
+	absolute: top 15px right 15px
+	animation: moving 3s linear infinite
+
+@keyframes moving
+	0%
+		top: 15px
+
+	100%
+		top: 100px
+

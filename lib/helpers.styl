@@ -232,17 +232,6 @@ sprite-padded(path, x = 0, y = 0, width, height, top, left, grid...)
 		size: width height
 
 /*
- * Heading mixin
- * e.g. heading: 24px, #F80
- */
-heading(size, color = default-color)
-	color: color
-	text-rendering: optimizelegibility
-	fs: unit(size, px)
-	fw: bold
-	margin: unit(size/3.2, px) 0
-
-/*
  * Make single text line overflow
  * e.g. text-overflow: 200 ellipsis
  */
@@ -257,7 +246,7 @@ text-overflow(width, type = ellipsis)
  * e.g. text-hide()
  */
 text-hide()
-	text-indent: -9999
+	text-indent: -9999px
 	white-space: nowrap
 	overflow: hidden
 

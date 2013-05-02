@@ -25,8 +25,10 @@ node ./test/server.js
 and in **new terminal window** to run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
 
 ```bash
-npm screenshot
+npm screenshots
 ```
+
+or
 
 ```bash
 make screenshots

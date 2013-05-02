@@ -285,7 +285,7 @@ describe('dookie-css utilities', function () {
 
 	// use dookie and get css from stylus string
 	function stylusHelper (str, callback) {
-		var config = path.join(__dirname, '..', '/public/_config');
+		var config = path.join(__dirname, '..', '/styl/_config');
 
 		stylus(str)
 			.use(dookie.css())

@@ -83,11 +83,11 @@ Now in your main Stylus file we add ``@import`` configuration and start to use d
 
 - ``vendors`` - list of vendors you want to use (by default includes ``webkit``, ``moz``, ``ms``, ``o`` and ``official`` which means unprefixed property);
 
-- ``ie-support`` - set to ``true`` to enable special IE properties like ``filter: alpha(opacity = 100)``;
+- ``ie-support`` - set to ``true`` to enable special IE properties like ``filter: alpha(opacity = 100)`` etc.;
 
 - ``font-stack`` - global font-family stack;
 
-- ``sans-serif``- ``serif`` and ``monospace`` - default font families;
+- ``sans-serif``- ``serif`` and ``monospace`` - default font-families;
 
 - ``font-size`` - global font-size variable;
 
@@ -471,7 +471,7 @@ As [reset helpers](https://github.com/voronianski/dookie-css#reset-global-mixins
 adds couple of useful classes that you might add anyways, full list of them:
 
 ```css
-.left, .right, .clear, .hide, .bold, .italic, .bullet, .clearfix
+.left, .right, .clear, .show, .hide, .bold, .italic, .bullet, .clearfix, .rounded
 ```
 
 #####text-selection([highlight color], [text color|default: 'white'])

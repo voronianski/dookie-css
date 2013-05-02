@@ -1,0 +1,282 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+input,
+textarea,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+blockquote,
+q {
+  quotes: "&#8220;" "&#8221;";
+}
+a img {
+  border: none;
+}
+.clear {
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.bullet {
+  list-style: circle;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.clearfix {
+  display: block;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.rounded {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+}
+@font-face {
+  font-family: OpenSansRegular;
+  src: url("../fonts/OpenSansRegular.eot?#iefix") format('embedded-opentype'), url("../fonts/OpenSansRegular.woff") format('woff'), url("../fonts/OpenSansRegular.ttf") format('truetype'), url("../fonts/OpenSansRegular.svg#OpenSansRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.tests {
+  width: 400px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+.heading {
+  color: #aaa;
+  text-rendering: optimizelegibility;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 7.5px 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.box {
+  width: 400px;
+  height: 100px;
+  margin: 10px auto;
+}
+.bg-color {
+  background-color: #f80;
+}
+.linear-gradient {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f00), color-stop(0.5, #008000), color-stop(1, #00f));
+  background-image: -webkit-linear-gradient(bottom, #f00 0%, #008000 50%, #00f 100%);
+  background-image: -moz-linear-gradient(bottom, #f00 0%, #008000 50%, #00f 100%);
+  background-image: linear-gradient(bottom, #f00 0%, #008000 50%, #00f 100%);
+}
+.radial-gradient {
+  background-image: -webkit-gradient(radial, center center 0px, center center 100%, color-stop(0, #f00), color-stop(0.8, #00f), );
+  background-image: -webkit-radial-gradient(center, ellipse cover, #f00 0%, #00f 80%);
+  background-image: -moz-radial-gradient(center, ellipse cover, #f00 0%, #00f 80%);
+  background-image: radial-gradient(ellipse at center, #f00 0%, #00f 80%);
+}
+.simple-gradient {
+  background: #b35f00;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffac4d), color-stop(1, #b35f00));
+  background-image: -webkit-linear-gradient(top, #ffac4d 0%, #b35f00 100%);
+  background-image: -moz-linear-gradient(top, #ffac4d 0%, #b35f00 100%);
+  background-image: linear-gradient(top, #ffac4d 0%, #b35f00 100%);
+}
+.gradient {
+  background: #f00;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f80), color-stop(1, #f00));
+  background-image: -webkit-linear-gradient(top, #f80 0%, #f00 100%);
+  background-image: -moz-linear-gradient(top, #f80 0%, #f00 100%);
+  background-image: linear-gradient(top, #f80 0%, #f00 100%);
+}
+.absolute-size-vendored {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.image-block {
+  background: url("../images/dookie.jpg") no-repeat;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  width: 225px;
+  height: 225px;
+}
+.sprite {
+  width: 44px;
+  height: 44px;
+  background: url("../images/pixelhunter_logo.png") no-repeat;
+  background-position: 0px -44px;
+}
+.text-hidden {
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.text-overflow {
+  font-family: OpenSansRegular;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 400px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid #555;
+  margin: 15px auto;
+}
+.animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  -webkit-animation: moving 3s linear infinite;
+  -moz-animation: moving 3s linear infinite;
+}
+@-webkit-keyframes moving {
+  0% {
+    top: 15px;
+  }
+
+  100% {
+    top: 100px;
+  }
+}
+@-moz-keyframes moving {
+  0% {
+    top: 15px;
+  }
+
+  100% {
+    top: 100px;
+  }
+}
