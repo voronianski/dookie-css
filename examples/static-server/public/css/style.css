@@ -12,6 +12,7 @@ a img{border:none}
 .bold{font-weight:bold}
 .italic{font-style:italic}
 .bullet{list-style:circle}
+.show{display:block}
 .hide{display:none}
 .clearfix{display:block;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}

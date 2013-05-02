@@ -52,7 +52,9 @@ stylus(str)
 	});
 ```
 
-Check out *./examples* folder to see how dookie can be introduced with pure node.js static [server](https://github.com/voronianski/dookie-css/blob/master/examples/static-server/server.js). So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
+Check out *./examples* folder to see how dookie can be introduced with pure node.js static [server](https://github.com/voronianski/dookie-css/blob/master/examples/static-server/server.js) or [express framework](https://github.com/voronianski/dookie-css/tree/master/examples/express-app).
+
+So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
 
 ##Documentation
 

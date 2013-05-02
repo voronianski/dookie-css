@@ -4,4 +4,5 @@ test:
 
 # phantomjs screenshots
 screenshots:
-	casperjs ./test/runTest.js
+	cd test
+	node ./runner.js

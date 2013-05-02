@@ -2,5 +2,6 @@ node_modules
 examples/static-server/node_modules
 examples/express-app/node_modules
 test/node_modules
+/test/*.jpg
 /*.jpg
 *.log

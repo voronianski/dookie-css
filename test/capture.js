@@ -7,7 +7,7 @@ var date = (new Date()).toString().replace(/\s/g, '-');
 var filename = 'dookie-css-test-' + date + '.jpg';
 
 casper.start(url, function () {
-	this.echo('test started on url -' + url, 'INFO');
+	this.echo('test started on url - ' + url, 'INFO');
 });
 
 casper.then(function () {

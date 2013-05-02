@@ -18,22 +18,22 @@ make test
 
 ##Screenshots
 
-To test Dookie visually you'll need to install all dependencies:
+To test Dookie visually you'll need to install all server dependencies in ``test`` folder before running:
 
 ```bash
 npm install
 ```
 
-and then start test server:
+and then start testing with command (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
 
 ```bash
-node ./test/server.js
+node ./runner.js
 ```
 
-and in **new terminal window** run test itself (be sure that you have [casper.js installed](http://casperjs.org/installation.html) on your machine):
+or from project root:
 
 ```bash
 make screenshots
 ```
 
-Then you can check how mixins actually look like while going into *./test/screenshots* folder.
+Then you can check how mixins actually look like while screenshots in the folder.
