@@ -500,9 +500,13 @@ font-face(DIN, '/fonts')
 	font-style: normal;
 ```
 
+##Test
+
+Together with Stylus and dookie you can easily create tests for your mixins and utilities. Read more how you can test dookie itself with **mocha.js** and **casper.js** here - [./test/README.md](https://github.com/voronianski/dookie-css/tree/master/test#test-dookie-css-with-mochajs--casperjs).
+
 ##Contribute
 
-##Test
+Dookie is in beta yet, so [issues](https://github.com/voronianski/dookie-css/issues) or useful pull requests are highly appreciated.
 
 ##Why dookie?!
 
