@@ -6,11 +6,8 @@
     "stylus",
     "mixins"
   ],
-  "version": "0.1.0",
-  "author": {
-    "name": "Dmitri Voronianski",
-    "email": "dmitri.voronianski@gmail.com"
-  },
+  "version": "0.1.1",
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha -R nyan ./test/spec"
   },
@@ -32,5 +29,10 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/voronianski/dookie-css.git"
+  },
+  "gitHead": "2c05585a0823757f00c84cd87685008663819c79",
+  "directories": {
+    "example": "examples",
+    "test": "test"
   }
 }

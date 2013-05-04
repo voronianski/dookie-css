@@ -10,12 +10,6 @@ You can run unit tests with several commands from project root:
 npm test
 ```
 
-or
-
-```bash
-make test
-```
-
 ##Screenshots
 
 To test Dookie visually you'll need to install all server dependencies in ``./test`` folder before running:
@@ -28,12 +22,6 @@ and then start testing with this command (be sure that you have [casper.js insta
 
 ```bash
 node ./runner.js
-```
-
-or (from ``./`` root):
-
-```bash
-make screenshots
 ```
 
 Then you can check how mixins actually look like on screenshots in the folder.
