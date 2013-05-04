@@ -13,7 +13,7 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
@@ -39,13 +39,13 @@ describe('dookie-css utilities', function () {
 				stylusHelper(styl, function (err, res) {
 					should.not.exist(err);
 					should.exist(res);
-					css = res;
+					css = res.trim();
 					done();
 				});
 			});
 
 			it('should add different "width" and "height" properties', function () {
-				css.trim().should.equal('width: 200px;\nheight: 100px;');
+				css.should.equal('width: 200px;\nheight: 100px;');
 			});
 		});
 
@@ -56,13 +56,13 @@ describe('dookie-css utilities', function () {
 				stylusHelper(styl, function (err, res) {
 					should.not.exist(err);
 					should.exist(res);
-					css = res;
+					css = res.trim();
 					done();
 				});
 			});
 
 			it('should create a foursquare', function () {
-				css.trim().should.equal('width: 50px;\nheight: 50px;');
+				css.should.equal('width: 50px;\nheight: 50px;');
 			});
 		});
 	});
@@ -76,7 +76,7 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
@@ -103,13 +103,13 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
 
 		it('should position image due grid', function () {
-			css.trim().should.equal('background: url("' + imgPath + '") no-repeat;\nbackground-position: 0px -44px;');
+			css.should.equal('background: url("' + imgPath + '") no-repeat;\nbackground-position: 0px -44px;');
 		});
 	});
 
@@ -120,13 +120,13 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
 
 		it('should create bulletproof css triangle', function () {
-			css.trim().should.equal('width: 0;\nheight: 0;\nborder-left: 15px solid transparent;\nborder-right: 15px solid transparent;\nborder-top: 15px solid #f80;')
+			css.should.equal('width: 0;\nheight: 0;\nborder-left: 15px solid transparent;\nborder-right: 15px solid transparent;\nborder-top: 15px solid #f80;');
 		});
 	});
 
@@ -139,7 +139,7 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
@@ -176,13 +176,13 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
 
 		it('should add ellipsis text overflow', function () {
-			css.trim().should.equal('text-overflow: ellipsis;\nwhite-space: nowrap;\noverflow: hidden;\nwidth: 300px;');
+			css.should.equal('text-overflow: ellipsis;\nwhite-space: nowrap;\noverflow: hidden;\nwidth: 300px;');
 		});
 	});
 
@@ -193,13 +193,13 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
 
 		it('should add prefixes only from settings', function () {
-			css.trim().should.equal('-webkit-border-radius: 3px;\n-moz-border-radius: 3px;');
+			css.should.equal('-webkit-border-radius: 3px;\n-moz-border-radius: 3px;');
 		});
 	});
 
@@ -210,13 +210,13 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
 
 		it('should translate to css positions', function () {
-			css.trim().should.equal('position: absolute;\ntop: 5px;\nleft: 10px;');
+			css.should.equal('position: absolute;\ntop: 5px;\nleft: 10px;');
 		});
 
 		describe('position mixin without args', function () {
@@ -226,13 +226,13 @@ describe('dookie-css utilities', function () {
 				stylusHelper(styl, function (err, res) {
 					should.not.exist(err);
 					should.exist(res);
-					css = res;
+					css = res.trim();
 					done();
 				});
 			});
 
 			it('should not contain any additional fields', function () {
-				css.trim().should.equal('position: relative;');
+				css.should.equal('position: relative;');
 			});
 		});
 	});
@@ -244,7 +244,7 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
@@ -269,7 +269,7 @@ describe('dookie-css utilities', function () {
 			stylusHelper(styl, function (err, res) {
 				should.not.exist(err);
 				should.exist(res);
-				css = res;
+				css = res.trim();
 				done();
 			});
 		});
@@ -279,7 +279,7 @@ describe('dookie-css utilities', function () {
 		});
 
 		it('should add specific IE properties', function () {
-			css.trim().should.equal('display: inline-block;\ndisplay: -moz-inline-stack;\nvertical-align: baseline;\nzoom: 1;\n*display: inline;\n*vertical-align: auto;');
+			css.should.equal('display: inline-block;\ndisplay: -moz-inline-stack;\nvertical-align: baseline;\nzoom: 1;\n*display: inline;\n*vertical-align: auto;');
 		});
 	});
 
