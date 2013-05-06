@@ -301,8 +301,8 @@ Dookie allows you to shorten css element positioning while using simply one line
 /* yields => */
 .box {
 	position: absolute;
-	top: 0px;
-	right: 5px;
+	top: 10px;
+	right: 15px;
 }
 ```
 
@@ -316,7 +316,7 @@ basic grid helper, *[path]* to your sprite picture, *[x]*, *[y]* - square counts
 
 ```css
 .sprite-pic
-	sprite-grid: 'sprite.png' 1 5 32px
+	sprite-grid: 'sprite.png' 1 1 32px
 
 
 /* yields => */
