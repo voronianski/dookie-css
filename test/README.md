@@ -4,7 +4,7 @@ Dookie uses [mocha.js](http://visionmedia.github.io/mocha) for unit testing of m
 
 ##Unit
 
-You can run unit tests with several commands from project root:
+You can run unit tests with command from project root:
 
 ```bash
 npm test
