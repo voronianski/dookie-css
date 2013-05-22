@@ -1,6 +1,4 @@
-![Green Day's Dookie button](http://www.goodrock.com/images/Product/medium/b2402.jpg)
-
-#doookie-css
+#dookie-css
 
 CSS library built on top of the [Stylus](https://github.com/learnboost/stylus "Stylus") preprocessor.
 It provides a couple of useful stylus mixins, utilities and components.
@@ -509,6 +507,8 @@ Together with Stylus and dookie you can easily create tests for your mixins and 
 Dookie is in beta yet, so [issues](https://github.com/voronianski/dookie-css/issues) or useful pull requests are highly appreciated.
 
 ##Why dookie?!
+
+![Green Day's Dookie button](http://www.goodrock.com/images/Product/medium/b2402.jpg)
 
 Because it's awesome [Green Day's](http://en.wikipedia.org/wiki/Green_Day-_Dookie "Dookie album wiki") album from my childhood :)
 
