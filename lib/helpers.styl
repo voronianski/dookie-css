@@ -85,12 +85,15 @@ clearfix()
  * e.g size: 20px 10px => width: 20px; height: 10px
  */
 size(numbers...)
+	parsed = unit(numbers[0])
+	type = match('^[^%]*%[^%]*$', parsed) ? '%' : 'px'
+
 	if length(numbers) > 1
-		width: unit(numbers[0], px)
-		height: unit(numbers[1], px)
+		width: unit(numbers[0], type)
+		height: unit(numbers[1], type)
 	else
-		width: unit(numbers, px)
-		height: unit(numbers, px)
+		width: unit(numbers, type)
+		height: unit(numbers, type)
 
 /*
  * Position helper

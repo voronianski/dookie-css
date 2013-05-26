@@ -65,6 +65,24 @@ describe('dookie-css utilities', function () {
 				css.should.equal('width: 50px;\nheight: 50px;');
 			});
 		});
+
+		describe('with percent dimensions', function () {
+			beforeEach(function (done) {
+				styl = 'size(100%)';
+
+				stylusHelper(styl, function (err, res) {
+					should.not.exist(err);
+					should.exist(res);
+					css = res.trim();
+					done();
+				});
+			});
+
+			it('should have percents instead of pixels', function () {
+				css.should.equal('width: 100%;\nheight: 100%;');
+			});
+
+		});
 	});
 
 	describe('image-block() mixin', function () {
