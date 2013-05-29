@@ -81,7 +81,23 @@ describe('dookie-css utilities', function () {
 			it('should have percents instead of pixels', function () {
 				css.should.equal('width: 100%;\nheight: 100%;');
 			});
+		});
 
+		describe('with mixed dimensions', function () {
+			beforeEach(function (done) {
+				styl = 'size(100%, 50px)';
+
+				stylusHelper(styl, function (err, res) {
+					should.not.exist(err);
+					should.exist(res);
+					css = res.trim();
+					done();
+				});
+			});
+
+			it('should have percents for width and pixels for height', function () {
+				css.should.equal('width: 100%;\nheight: 50px;');
+			});
 		});
 	});
 
