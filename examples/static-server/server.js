@@ -31,7 +31,7 @@ fs.readFile(stylFile, 'utf8', function (err, str) {
 				console.error('Error while rendering stylus: %s'.red, err);
 			}
 
-			fs.writeFileSync(cssFile, css, 'utf8', function (err) {
+			fs.writeFile(cssFile, css, 'utf8', function (err) {
 				if (err) {
 					console.error('Error while writing file: %s'.red, err);
 					return;
@@ -52,7 +52,7 @@ function handler (request, response) {
 				console.info('%s - %s'.cyan, response.statusCode, request.url);
 			}
 		});
-	});
+	}).resume();
 }
 
 app.listen(port);

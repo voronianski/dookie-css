@@ -28,7 +28,7 @@ fs.readFile(stylFile, 'utf8', function (err, str) {
 				return;
 			}
 
-			fs.writeFileSync(cssFile, css, 'utf8', function (err) {
+			fs.writeFile(cssFile, css, 'utf8', function (err) {
 				if (err) {
 					console.error('Error while writing file: %s'.red, err);
 				}
