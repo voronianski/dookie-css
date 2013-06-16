@@ -56,6 +56,16 @@ Check out *./examples* folder to see how dookie can be introduced with pure node
 
 So now all dookie utilities can be called within your ``.styl`` files and it's time to check lib's [documentation](https://github.com/voronianski/dookie-css#documentation).
 
+##Stylus cli plugin
+
+If you prefer use Stylus cli executable for converting Stylus to CSS, you can also use dookie with it. In ``--use`` option specify path to dookie.js file, for example:
+
+```javascript
+stylus --use ./node_modules/dookie-css/dookie.js --out ./
+```
+
+Further reading about Stylus cli [here](http://learnboost.github.io/stylus/docs/executable.html).
+
 ##Documentation
 
 ###Settings
