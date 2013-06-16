@@ -1,5 +1,7 @@
 #dookie-css
 
+[![NPM version](https://badge.fury.io/js/dookie-css.png)](http://badge.fury.io/js/dookie-css)
+
 CSS library built on top of the [Stylus](https://github.com/learnboost/stylus "Stylus") preprocessor.
 It provides a couple of useful stylus mixins, utilities and components.
 
