@@ -13,4 +13,4 @@ function css () {
 
 exports.path = __dirname + '/lib';
 exports.middleware = middleware;
-exports.css = css;
+exports.css = module.exports = css;
