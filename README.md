@@ -36,8 +36,8 @@ More about Stylus middleware [here](http://learnboost.github.io/stylus/docs/midd
 As for pure node.js or some other cases dookie has method called ``css``. Here is an example of simple static ``server.js`` using Stylus + dookie:
 
 ```javascript
-var	stylus = require('stylus'),
-	dookie = require('dookie-css');
+var stylus = require('stylus'),
+    dookie = require('dookie-css');
 
 ...
 
