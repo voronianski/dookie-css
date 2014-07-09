@@ -6,7 +6,7 @@
     "stylus",
     "mixins"
   ],
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha -R nyan ./test/spec"
