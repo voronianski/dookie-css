@@ -490,6 +490,10 @@ adds couple of useful classes that you might add anyways, full list of them:
 
 selection background and text color;
 
+#####border-box()
+
+enable border-box sizing globally;
+
 #####font-face([name], [folder], [weight optional], [style optional])
 
 [bulletproof](http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax) @font-face mixin, keep in mind that font name should be the same as font filename;

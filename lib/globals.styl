@@ -29,6 +29,16 @@ text-selection(highlight, textColor = null)
 		color: textColor
 
 /*
+ * Global border-box mixin
+ * e.g. border-box()
+ */
+border-box()
+	*,
+	*:before,
+	*:after
+		box-sizing border-box
+
+/*
  * Base classes
  * e.g. base-classes()
  */
