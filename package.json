@@ -6,7 +6,7 @@
     "stylus",
     "mixins"
   ],
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha -R nyan ./test/spec"
@@ -16,7 +16,7 @@
     "node": ">=0.8.22"
   },
   "dependencies": {
-    "stylus": "~0.32.1"
+    "stylus": "latest"
   },
   "devDependencies": {
     "should": "~1.2.2",
