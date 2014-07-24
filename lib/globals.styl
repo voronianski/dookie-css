@@ -29,14 +29,15 @@ text-selection(highlight, textColor = null)
 		color: textColor
 
 /*
- * Global border-box mixin
+ * Global border-box mixin best-practice
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  * e.g. border-box()
  */
 border-box()
-	*,
-	*:before,
-	*:after
+	html
 		box-sizing border-box
+	*, *:before, *:after
+		box-sizing inherit
 
 /*
  * Base classes
