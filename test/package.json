@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "colors": "~0.6.x",
-    "send": "~0.1.0",
+    "send": "~0.17.1",
     "stylus": "~0.32.1"
   }
 }
